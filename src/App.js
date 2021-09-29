@@ -1,16 +1,14 @@
-import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import AddProject from "./components/AddProject";
-import EditProject from "./components/EditProject";
-import ListProjects from "./components/ListProjects";
-import ProjectDetails from "./components/ProjectDetails";
+import { Switch, Route } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
+import TaskList from "./components/TaskList";
+import AddTask from "./components/AddTask";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
@@ -31,13 +29,20 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <NavBar loggedInUser={loggedInUser} setCurrentLoggedInUser={setCurrentLoggedInUser} />
+      <NavBar
+        loggedInUser={loggedInUser}
+        setCurrentLoggedInUser={setCurrentLoggedInUser}
+      />
       <Switch>
-        <Route exact path={["/", "/projects"]} component={ListProjects} />
-        <Route exact path="/projects/add" component={AddProject} />
-        <Route exact path="/projects/:id" component={ProjectDetails} />
-        <Route path="/projects/:id/edit" component={EditProject} />
-        <Route path="/signup" component={Signup} />
+        <Route
+          path="/tasks/add"
+          render={() => {
+            return <AddTask loggedInUser={loggedInUser} />;
+          }}
+        />
+        <Route exact path="/tasks" component={TaskList} />
+        <Route exact path="/signup" component={Signup} />
+
         <Route
           path="/Login"
           render={() => {

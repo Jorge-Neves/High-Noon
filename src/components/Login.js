@@ -22,8 +22,9 @@ function Login({ setCurrentLoggedInUser }) {
       );
       if (response.data.username) {
         toast.success("Login success");
+        console.log(response);
         setCurrentLoggedInUser(response.data); //Comes from the app component
-        history.push("/projects");
+        history.push("/tasks");
       }
     } catch (e) {
       toast.error("Invalid login");
