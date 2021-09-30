@@ -14,7 +14,7 @@ function AddTask({ loggedInUser }) {
     const body = {
       name,
       timeSpent: 1,
-      user: `${loggedInUser.username}`,
+      user: loggedInUser,
     };
 
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/tasks`, body);
