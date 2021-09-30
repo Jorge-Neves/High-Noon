@@ -25,7 +25,7 @@ function AddTask({ loggedInUser }) {
   return (
     <>
       <h2>Add Task</h2>
-      <form onSubmit={handleFormSubmit} encType="multipart/form-data">
+      <form onSubmit={handleFormSubmit}>
         <label>Name</label>
         <input
           type="text"
