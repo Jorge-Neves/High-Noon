@@ -21,7 +21,7 @@ function TaskList() {
       {tasks.map((task) => {
         return (
           <li key={task._id}>
-            <NavLink to={`/projects/${task._id}`}>{task.title}</NavLink>
+            <NavLink to={`/tasks/${task._id}`}>{task.name}</NavLink>
           </li>
         );
       })}

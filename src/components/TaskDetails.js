@@ -4,35 +4,35 @@ import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function TaskDetails({ match }) {
-  const [project, setProject] = useState({});
+  const [tasks, setTasks] = useState({});
   const history = useHistory();
 
   useEffect(() => {
-    async function getProjectDetails() {
+    async function getTaskDetails() {
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/projects/${match.params.id}`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${match.params.id}`
       );
-      setProject(response.data);
+      setTasks(response.data);
     }
-    getProjectDetails();
+    getTaskDetails();
   }, []);
 
   const handleDeleteProject = async (id) => {
     await axios.delete(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/projects/${id}`
+      `${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${id}`
     );
-    toast.info("Project deleted");
+    toast.info("task deleted");
     history.push("/");
   };
 
   return (
     <>
-      <h2>{project.title}</h2>
-      <h3>{project.description}</h3>
-      {project.imageUrl && <img src={project.imageUrl} alt="project" />}
+      <h2>{tasks.name}</h2>
+      <h3>{tasks.timeSpent}</h3>
+      
 
-      <NavLink to={`/projects/${project._id}/edit`}>Edit</NavLink>
-      <button onClick={() => handleDeleteProject(project._id)}>Delete</button>
+      <NavLink to={`/tasks/${tasks._id}/edit`}>Edit</NavLink>
+      <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
     </>
   );
 }

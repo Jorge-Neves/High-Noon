@@ -17,6 +17,7 @@ import UserStats from "./components/UserStats";
 import UserDetails from "./components/UserDetails";
 import Affirmations from "./components/Affirmations";
 import Zen from "./components/Zen";
+import EditTask from "./components/EditTask";
 
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
@@ -63,6 +64,7 @@ function App() {
         <Route exact path="/tasks/add" component={AddTask} />
         <Route exact path="/tasks/graphs" component={TaskGraphs} />
         <Route exact path="/tasks/:id" component={TaskDetails} />
+        <Route exact path="/tasks/:id/edit" component={EditTask} />
         <Route exact path="/user/stats" component={UserStats} />
         <Route exact path="/user" component={UserDetails} />
         <Route exact path="/home" component={HomePage} />

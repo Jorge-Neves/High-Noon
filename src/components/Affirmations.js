@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios"
+import AffirmationJSON from "../seeds/Affirmation.json"
 
 function Affirmations(){
+    const [affirm, setAffirm] = useState(AffirmationJSON);
+    
+    useEffect(() => {
+        async function randomAfirm() {
+            const index = Math.floor(Math.random() * AffirmationJSON.length);
+            const newRandomAffirm = AffirmationJSON[index];
+            
+         
+          setAffirm(newRandomAffirm);
+        };
+          randomAfirm();
+
+    },[])
 
     return(
-        <h2>Affirmations</h2>
+    <>
+        <h1>Affirmations</h1>
+        <h2>{affirm.name}</h2>
+    </>
     )
 }
 

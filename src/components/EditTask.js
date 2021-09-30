@@ -14,8 +14,8 @@ function EditTask({ match }) {
         `${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${match.params.id}`
       );
 
-      setName(task.data.title);
-      setTimeSpent(task.data.description);
+      setName(task.data.name);
+      setTimeSpent(task.data.timeSpent);
     }
     getTask();
   }, []);
@@ -49,7 +49,7 @@ function EditTask({ match }) {
 
         <label>Time Spent</label>
         <input
-          type="text"
+          type="number"
           onChange={(e) => setTimeSpent(e.target.value)}
           value={timeSpent}
         />
