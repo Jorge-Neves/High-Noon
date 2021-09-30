@@ -21,13 +21,48 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             </NavLink>
           </li>
           <li>
+          <NavLink activeStyle={{ color: "red" }} exact to="/">
+            Landing Page
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeStyle={{ color: "red" }} exact to="/home">
+            HomePage
+          </NavLink>
+        </li>
+          <li>
             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
               Tasks
             </NavLink>
           </li>
           <li>
+            <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
+              Tasks Stats
+            </NavLink>
+          </li>
+          <li>
             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
               Add Tasks
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/user">
+              User Details
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/user/stats">
+              User Stats
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/affirmations">
+              Affirmations
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/zen">
+              Zen
             </NavLink>
           </li>
         </ul>
@@ -36,6 +71,11 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
   ) : (
     <nav>
       <ul>
+      <li>
+          <NavLink activeStyle={{ color: "red" }} exact to="/">
+            Landing Page
+          </NavLink>
+        </li>
         <li>
           <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
             Tasks
