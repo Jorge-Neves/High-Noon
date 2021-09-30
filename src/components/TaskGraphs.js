@@ -1,31 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import axios from "axios"
 
 
 function TaskGraphs(){
 
+    const [taskNames, setTaskNames] = useState([]);
+    const [taskTimes, setTaskTimes] = useState([]);
+  
+
+    useEffect(() => {
+        async function getUserTaskNames() {
+          const response = await axios.get(
+            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/names`,
+            { withCredentials: true }
+
+          );
+            const names = response.data
+            const namesArray = names.map((name) => {
+                return [`${name.name}`];
+            });
+                const numbers = response.data
+                const numberssArray = names.map((name) => {
+                    return [name.timeSpent];
+                });
+            
+          setTaskNames(namesArray);
+    
+          setTaskTimes(numberssArray);
+
+     
+        }
+        getUserTaskNames();
+      }, []);
+
+      /* useEffect(() => {
+        async function getUserTaskTimes() {
+          const response = await axios.get(
+            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/time`,
+            { withCredentials: true }
+          );
+          setTaskTimes(response.data.timeSpent);
+        }
+        getUserTaskTimes();
+      }, []); */
+    
     const data = {
-        labels: ['Math', 'Chemistry', 'Physics', 'Literature', '', 'Orange'],
+        labels: taskNames,
         datasets: [
           {
-            label: '# of Votes',
-            data: [4, 4, 4, 4, 4, 4],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-            ],
+            label: 'Productivity',
+            data: taskTimes,
             borderWidth: 1,
           },
         ],
