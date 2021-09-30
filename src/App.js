@@ -9,6 +9,14 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import HomePage from "./components/HomePage";
+import LandingPage from "./components/LandingPage";
+import TaskDetails from "./components/TaskDetails";
+import TaskGraphs from "./components/TaskGraphs";
+import UserStats from "./components/UserStats";
+import UserDetails from "./components/UserDetails";
+import Affirmations from "./components/Affirmations";
+import Zen from "./components/Zen";
 
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
@@ -51,15 +59,14 @@ function App() {
         />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/tasks" component={ListTasks} />
+        <Route exact path="/tasks" component={TaskList} />
         <Route exact path="/tasks/add" component={AddTask} />
-        <Route exact path="/tasks/:id" component={TaskDetails} />
         <Route exact path="/tasks/graphs" component={TaskGraphs} />
+        <Route exact path="/tasks/:id" component={TaskDetails} />
         <Route exact path="/user/stats" component={UserStats} />
         <Route exact path="/user" component={UserDetails} />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/affirmations" component={Affirmations} />
-        <Route exact path="/home" component={HomePage} />
         <Route exact path="/zen" component={Zen} />
       </Switch>
     </div>
