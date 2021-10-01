@@ -47,7 +47,11 @@ function App() {
       />
       <Switch>
         <PrivateRoute exact path="/tasks" component={TaskList} />
-        <Route exact path="/signup" component={Signup} /> 
+        <Route exact path="/signup" render={() => {
+              return <Signup 
+              loggedInUser={loggedInUser}
+              setCurrentLoggedInUser={setCurrentLoggedInUser} />;
+            }} /> 
 
         <Route
           path="/Login"
@@ -66,6 +70,13 @@ function App() {
         <PrivateRoute exact path="/user" component={UserDetails} />
         <PrivateRoute exact path="/affirmations" component={Affirmations} />
         <PrivateRoute exact path="/zen" component={Zen} />
+        {/* GOOGLE_LOGIN */}
+        <Route exact path="/login-google" render={
+            () => {
+              window.location.href = 
+              `${process.env.REACT_APP_SERVER_HOSTNAME}/auth/google`
+            }
+          }/>
       </Switch>
       </LoggedUserProvider>
     </div>

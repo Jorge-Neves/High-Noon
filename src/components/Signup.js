@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function Signup() {
+function Signup({loggedInUser, setCurrentLoggedInUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -16,7 +16,18 @@ function Signup() {
     };
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/signup`, body);
     toast.success("Signup success");
-    history.push("/tasks");
+    // history.push("/login");
+    const response = await axios.post(
+      `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
+      body,
+      { withCredentials: true }
+    );
+    if (response.data.username) {
+      toast.success("Login success");
+      console.log(response);
+      setCurrentLoggedInUser(response.data); //Comes from the app component
+      history.push("/tasks");
+    }
   };
 
   return (
