@@ -46,6 +46,21 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             </NavLink>
           </li>
           <li>
+            <NavLink activeStyle={{ color: "red" }} exact to="/skills">
+              Skills
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/skills/graphs">
+              Skills Stats
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} to="/skills/add">
+              Add Skills
+            </NavLink>
+          </li>
+          <li>
             <NavLink activeStyle={{ color: "red" }} to="/user">
               User Details
             </NavLink>

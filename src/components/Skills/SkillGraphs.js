@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import axios from "axios"
-import { LoggedUserConsumer} from "../context/loggedUser"
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
 
-function TaskGraphs(){
+function SkillGraphs(){
 
-    const [taskNames, setTaskNames] = useState([]);
-    const [taskTimes, setTaskTimes] = useState([]);
+    const [skillNames, setSkillNames] = useState([]);
+    const [skillTimes, setSkillTimes] = useState([]);
   
 
     useEffect(() => {
-        async function getUserTaskNames() {
+        async function getUserSkillNames() {
           const response = await axios.get(
-            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/names`,
+            `${process.env.REACT_APP_SERVER_HOSTNAME}/s/graphs/names`,
             { withCredentials: true }
 
           );
@@ -26,32 +26,22 @@ function TaskGraphs(){
                     return [name.timeSpent];
                 });
             
-          setTaskNames(namesArray);
+          setSkillNames(namesArray);
     
-          setTaskTimes(numberssArray);
+          setSkillTimes(numberssArray);
 
      
         }
-        getUserTaskNames();
+        getUserSkillNames();
       }, []);
 
-      /* useEffect(() => {
-        async function getUserTaskTimes() {
-          const response = await axios.get(
-            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/time`,
-            { withCredentials: true }
-          );
-          setTaskTimes(response.data.timeSpent);
-        }
-        getUserTaskTimes();
-      }, []); */
     
     const data = {
-        labels: taskNames,
+        labels: skillNames,
         datasets: [
           {
-            label: 'Productivity',
-            data: taskTimes,
+            label: 'Progress',
+            data: skillTimes,
             borderWidth: 1,
           },
         ],
@@ -75,4 +65,4 @@ function TaskGraphs(){
       );
 }
 
-export default TaskGraphs;
+export default SkillGraphs;

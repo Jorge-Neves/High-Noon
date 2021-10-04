@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer } from "../context/loggedUser";
+import { LoggedUserConsumer } from "../../context/loggedUser";
 
-function AddTask() {
+function AddSkill() {
   const loggedInUser = useContext(LoggedUserConsumer);
   const [name, setName] = useState("");
 
@@ -19,14 +19,14 @@ function AddTask() {
       user: loggedInUser,
     };
 
-    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/tasks`, body);
-    toast.success("Task created");
-    history.push("/tasks");
+    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/skills`, body);
+    toast.success("Skill created");
+    history.push("/skills");
   };
 
   return (
     <>
-      <h2>Add Task</h2>
+      <h2>Add Skill</h2>
       <form onSubmit={handleFormSubmit}>
         <label>Name</label>
         <input
@@ -41,4 +41,4 @@ function AddTask() {
   );
 }
 
-export default AddTask;
+export default AddSkill;

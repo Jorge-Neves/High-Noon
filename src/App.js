@@ -3,23 +3,28 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
-import TaskList from "./components/TaskList";
-import AddTask from "./components/AddTask";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomePage from "./components/HomePage";
 import LandingPage from "./components/LandingPage";
-import TaskDetails from "./components/TaskDetails";
-import TaskGraphs from "./components/TaskGraphs";
 import UserStats from "./components/UserStats";
 import UserDetails from "./components/UserDetails";
-import Affirmations from "./components/Affirmations";
-import Zen from "./components/Zen";
-import EditTask from "./components/EditTask";
 import { LoggedUserProvider } from "./context/loggedUser";
 import PrivateRoute from "./components/PrivateRoute";
+import EditSkill from "./components/Skills/EditSkill";
+import SkillDetails from "./components/Skills/SkillDetails";
+import SkillGraphs from "./components/Skills/SkillGraphs";
+import AddSkill from "./components/Skills/AddSkill";
+import Resources from "./components/Resources/Resources";
+import Tour from "./components/Website Tour/Tour";
+import AddTask from "./components/Tasks/AddTask";
+import TaskGraphs from "./components/Tasks/TaskGraphs";
+import TaskDetails from "./components/Tasks/TaskDetails";
+import EditTask from "./components/Tasks/EditTask";
+import Zen from "./components/Timer/Zen";
+import Affirmations from "./components/Timer/Affirmations"
 
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
@@ -66,10 +71,17 @@ function App() {
         <PrivateRoute exact path="/tasks/graphs" component={TaskGraphs} />
         <PrivateRoute exact path="/tasks/:id" component={TaskDetails} />
         <PrivateRoute exact path="/tasks/:id/edit" component={EditTask} />
+        <PrivateRoute exact path="/skills/add" component={AddSkill} />
+        <PrivateRoute exact path="/skills/graphs" component={SkillGraphs} />
+        <PrivateRoute exact path="/skills/:id" component={SkillDetails} />
+        <PrivateRoute exact path="/skills/:id/edit" component={EditSkill} />
         <PrivateRoute exact path="/user/stats" component={UserStats} />
         <PrivateRoute exact path="/user" component={UserDetails} />
         <PrivateRoute exact path="/affirmations" component={Affirmations} />
         <PrivateRoute exact path="/zen" component={Zen} />
+        <PrivateRoute exact path="/zen" component={Resources} />
+        <PrivateRoute exact path="/zen" component={Tour} />
+
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
             () => {

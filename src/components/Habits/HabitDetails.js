@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer} from "../context/loggedUser"
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
-function TaskDetails({ match }) {
+function HabitDetails({ match }) {
   const [tasks, setTasks] = useState({});
   const history = useHistory();
 
@@ -38,4 +38,4 @@ function TaskDetails({ match }) {
   );
 }
 
-export default TaskDetails;
+export default HabitDetails;

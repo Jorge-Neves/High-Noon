@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios"
-import AffirmationJSON from "../seeds/Affirmation.json"
-import { LoggedUserConsumer} from "../context/loggedUser"
+import AffirmationJSON from "../../seeds/Affirmation.json"
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
 function Affirmations(){
     const [affirm, setAffirm] = useState(AffirmationJSON);
