@@ -6,71 +6,56 @@ import { LoggedUserConsumer} from "../../context/loggedUser"
 
 function HabitGraphs(){
 
-    const [taskNames, setTaskNames] = useState([]);
-    const [taskTimes, setTaskTimes] = useState([]);
+    const [habitDatesUser, setHabitDatesUser] = useState([]);
+    const [HabitStreak, setHabitStreak] = useState([]);
+    const [habitDatesCalcs, setHabitDatesCalcs] = useState([]);
+    const [missDatesUser, setMissDatesUser] = useState([]);
+    const [missStreak, setMissStreak] = useState([]);
+    const [missDatesCalcs, setMissDatesCalcs] = useState([]);
   
 
     useEffect(() => {
-        async function getUserTaskNames() {
+        async function getUserHabitData() {
           const response = await axios.get(
-            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/names`,
+            `${process.env.REACT_APP_SERVER_HOSTNAME}/h/success`,
             { withCredentials: true }
 
           );
-            const names = response.data
-            const namesArray = names.map((name) => {
-                return [`${name.name}`];
-            });
-                const numbers = response.data
-                const numberssArray = names.map((name) => {
-                    return [name.timeSpent];
-                });
+            apiResponse = response.data
             
-          setTaskNames(namesArray);
-    
-          setTaskTimes(numberssArray);
+          setHabitDatesUser(apiResponse.successArrayStrings);
+          setMissDatesCalcs(apiResponse.missArrayIntegers);
+          
+          setHabitStreak(apiResponse.successCount);
+
+          setMissDatesUser(apiResponse.missArrayStrings);
+          setMissDatesCalcs(apiResponse.missArrayIntegers);
+
+          setMissStreak(apiResponse.missCount);
+          
+
+
+        
 
      
         }
-        getUserTaskNames();
+        getUserHabitData();
       }, []);
 
-      /* useEffect(() => {
-        async function getUserTaskTimes() {
-          const response = await axios.get(
-            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/time`,
-            { withCredentials: true }
-          );
-          setTaskTimes(response.data.timeSpent);
-        }
-        getUserTaskTimes();
-      }, []); */
+
     
-    const data = {
-        labels: taskNames,
-        datasets: [
-          {
-            label: 'Productivity',
-            data: taskTimes,
-            borderWidth: 1,
-          },
-        ],
-      };
+    
 
 
     return(
         <>
-          <div className='header'>
-            <h1 className='title'>Doughnut Chart</h1>
-            <div className='links'>
-
-            </div>
-          </div>
-          
-          <div>
-          <Doughnut data={data} />
-          </div>
-        
+         <h2>habits Dates User : {habitDatesUser}</h2>
+         <h2>Habit Streak : {HabitStreak}</h2>
+         <h2>Habits Dates Calc: {habitDatesCalcs}</h2>
+         <h2>Dates Missed User : {missDatesUser}</h2>
+         <h2>Dates Missed Calc{missDatesCalcs}</h2>
+         <h2>Times missed Streak {missStreak}</h2>
+         
         </>
       );
 }

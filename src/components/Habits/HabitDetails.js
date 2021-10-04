@@ -5,35 +5,35 @@ import { toast } from "react-toastify";
 import { LoggedUserConsumer} from "../../context/loggedUser"
 
 function HabitDetails({ match }) {
-  const [tasks, setTasks] = useState({});
+  const [habits, setHabits] = useState({});
   const history = useHistory();
 
   useEffect(() => {
-    async function getTaskDetails() {
+    async function getHabitDetails() {
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${match.params.id}`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${match.params.id}`
       );
-      setTasks(response.data);
+      setHabits(response.data);
     }
-    getTaskDetails();
+    getHabitDetails();
   }, []);
 
   const handleDeleteProject = async (id) => {
     await axios.delete(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${id}`
+      `${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${id}`
     );
-    toast.info("task deleted");
+    toast.info("Habit deleted");
     history.push("/");
   };
 
   return (
     <>
-      <h2>{tasks.name}</h2>
-      <h3>{tasks.timeSpent}</h3>
+      <h2>{habits.name}</h2>
+      <h3>{habits.timeSpent}</h3>
       
 
-      <NavLink to={`/tasks/${tasks._id}/edit`}>Edit</NavLink>
-      <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
+      <NavLink to={`/habits/${habits._id}/edit`}>Edit</NavLink>
+      <button onClick={() => handleDeleteProject(habits._id)}>Delete</button>
     </>
   );
 }

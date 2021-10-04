@@ -19,14 +19,14 @@ function AddHabit() {
       user: loggedInUser,
     };
 
-    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/tasks`, body);
-    toast.success("Task created");
-    history.push("/tasks");
+    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits`, body);
+    toast.success("Habit created");
+    history.push("/habits");
   };
 
   return (
     <>
-      <h2>Add Task</h2>
+      <h2>Add Habit</h2>
       <form onSubmit={handleFormSubmit}>
         <label>Name</label>
         <input
