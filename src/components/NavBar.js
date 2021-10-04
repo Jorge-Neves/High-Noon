@@ -21,15 +21,15 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             </NavLink>
           </li>
           <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/">
-            Landing Page
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/home">
-            HomePage
-          </NavLink>
-        </li>
+            <NavLink activeStyle={{ color: "red" }} exact to="/">
+              Landing Page
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeStyle={{ color: "red" }} exact to="/home">
+              HomePage
+            </NavLink>
+          </li>
           <li>
             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
               Tasks
@@ -71,7 +71,7 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
   ) : (
     <nav>
       <ul>
-      <li>
+        <li>
           <NavLink activeStyle={{ color: "red" }} exact to="/">
             Landing Page
           </NavLink>
@@ -89,6 +89,12 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
         <li>
           <NavLink activeStyle={{ color: "red" }} to="/login">
             Login
+          </NavLink>
+        </li>
+        {/* GOOGLE_LOGIN */}
+        <li>
+          <NavLink activeStyle={{ color: "red" }} exact to="/login-google">
+            Login With Google
           </NavLink>
         </li>
       </ul>
