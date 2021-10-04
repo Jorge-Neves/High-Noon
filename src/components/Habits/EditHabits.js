@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { LoggedUserConsumer} from "../../context/loggedUser"
 
-function EditTask({ match }) {
+function EditHabit({ match }) {
   const [name, setName] = useState("");
   const [timeSpent, setTimeSpent] = useState("");
   const history = useHistory();
@@ -61,4 +61,4 @@ function EditTask({ match }) {
   );
 }
 
-export default EditTask;
+export default EditHabit;

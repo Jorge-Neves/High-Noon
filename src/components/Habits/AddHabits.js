@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 
-function AddTask() {
+function AddHabit() {
   const loggedInUser = useContext(LoggedUserConsumer);
   const [name, setName] = useState("");
 
@@ -41,4 +41,4 @@ function AddTask() {
   );
 }
 
-export default AddTask;
+export default AddHabit;

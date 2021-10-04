@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer} from "../../context/loggedUser"
 
-function TaskList() {
+function HabitList() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ function TaskList() {
   );
 }
 
-export default TaskList;
+export default HabitList;

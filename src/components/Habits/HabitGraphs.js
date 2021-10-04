@@ -4,7 +4,7 @@ import axios from "axios"
 import { LoggedUserConsumer} from "../../context/loggedUser"
 
 
-function TaskGraphs(){
+function HabitGraphs(){
 
     const [taskNames, setTaskNames] = useState([]);
     const [taskTimes, setTaskTimes] = useState([]);
@@ -75,4 +75,4 @@ function TaskGraphs(){
       );
 }
 
-export default TaskGraphs;
+export default HabitGraphs;
