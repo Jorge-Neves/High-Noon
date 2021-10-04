@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 
+import"./NavBar.css"
+
 function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
   const logoutUser = async () => {
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/logout`, null, {
@@ -12,75 +14,75 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
 
   return loggedInUser ? (
     <>
-      <p>Welcome {loggedInUser.username}</p>
-      <nav>
-        <ul>
-          <li>
+      <div className="navi container-fluid">
+        <p>Welcome {loggedInUser.username}</p>
+      </div>
+      <nav className="navi container-fluid" >
+          <div>
             <NavLink exact to="/">
               <button onClick={logoutUser}>Logout</button>
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} exact to="/">
               Landing Page
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} exact to="/home">
               HomePage
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
               Tasks
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
               Tasks Stats
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
               Add Tasks
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} exact to="/skills">
               Skills
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/skills/graphs">
               Skills Stats
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/skills/add">
               Add Skills
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/user">
               User Details
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/user/stats">
               User Stats
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/affirmations">
               Affirmations
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div>
             <NavLink activeStyle={{ color: "red" }} to="/zen">
               Zen
             </NavLink>
-          </li>
-        </ul>
+          </div>
       </nav>
     </>
   ) : (

@@ -48,7 +48,7 @@ function EditHabit({ match }) {
           value={name}
         />
 
-        <label>Time Spent</label>
+        <label>Edit dates</label>
         <input
           type="number"
           onChange={(e) => setTimeSpent(e.target.value)}

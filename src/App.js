@@ -24,8 +24,11 @@ import TaskGraphs from "./components/Tasks/TaskGraphs";
 import TaskDetails from "./components/Tasks/TaskDetails";
 import EditTask from "./components/Tasks/EditTask";
 import Zen from "./components/Timer/Zen";
-import Affirmations from "./components/Timer/Affirmations"
+import Affirmations from "./components/Timer/Affirmations";
+import TaskList from "./components/Tasks/TaskList";
+import AI from "./components/AI/AI";
 
+import "./components/NavBar.css"
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
 
@@ -46,7 +49,7 @@ function App() {
     <div className="App">
       <ToastContainer />
       <LoggedUserProvider value={loggedInUser}>
-      <NavBar
+      <NavBar className
         loggedInUser={loggedInUser}
         setCurrentLoggedInUser={setCurrentLoggedInUser}
       />
@@ -79,8 +82,9 @@ function App() {
         <PrivateRoute exact path="/user" component={UserDetails} />
         <PrivateRoute exact path="/affirmations" component={Affirmations} />
         <PrivateRoute exact path="/zen" component={Zen} />
-        <PrivateRoute exact path="/zen" component={Resources} />
-        <PrivateRoute exact path="/zen" component={Tour} />
+        <PrivateRoute exact path="/resources" component={Resources} />
+        <PrivateRoute exact path="/tour" component={Tour} />
+        <Route exact path="/ai" component={AI} />
 
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
