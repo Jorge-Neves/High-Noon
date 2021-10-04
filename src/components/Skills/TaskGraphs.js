@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import axios from "axios"
-import { LoggedUserConsumer} from "../context/loggedUser"
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
 
 function TaskGraphs(){

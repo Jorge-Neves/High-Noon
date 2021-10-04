@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer } from "../context/loggedUser";
+import { LoggedUserConsumer } from "../../context/loggedUser";
 
 function AddTask() {
   const loggedInUser = useContext(LoggedUserConsumer);

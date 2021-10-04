@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer} from "../context/loggedUser"
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
 function TaskDetails({ match }) {
   const [tasks, setTasks] = useState({});
