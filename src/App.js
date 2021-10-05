@@ -26,9 +26,10 @@ import EditTask from "./components/Tasks/EditTask";
 import Zen from "./components/Timer/Zen";
 import Affirmations from "./components/Timer/Affirmations";
 import TaskList from "./components/Tasks/TaskList";
-import AI from "./components/AI/AI";
+
 
 import "./components/NavBar.css"
+import SimpleBot from "./components/SimpleBot/Resources";
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
 
@@ -84,7 +85,7 @@ function App() {
         <PrivateRoute exact path="/zen" component={Zen} />
         <PrivateRoute exact path="/resources" component={Resources} />
         <PrivateRoute exact path="/tour" component={Tour} />
-        <Route exact path="/ai" component={AI} />
+        <Route exact path="/simplebot" component={SimpleBot} />
 
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
