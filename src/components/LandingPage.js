@@ -6,7 +6,7 @@ function LandingPage(){
     return(
         <>
         <h2>Landing Page
-        <Contacts />
+        
         </h2>
         </>
     )

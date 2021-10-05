@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function Login({ setCurrentLoggedInUser }) {
+ function Login({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -54,8 +54,7 @@ function Login({ setCurrentLoggedInUser }) {
       Don't have an account? Register <NavLink to="/signup">here</NavLink>
     </>
   );
-}
 
-export default Login;
+ }
 
-
+ export default Login;

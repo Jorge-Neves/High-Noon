@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-
 import"./NavBar.css"
 
 function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
@@ -81,6 +80,11 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
           <div>
             <NavLink activeStyle={{ color: "red" }} to="/zen">
               Zen
+            </NavLink>
+          </div>^
+          <div>
+            <NavLink activeStyle={{ color: "red" }} to="/contacts">
+            Meet the Team
             </NavLink>
           </div>
       </nav>
