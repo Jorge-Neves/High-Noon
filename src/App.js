@@ -17,7 +17,6 @@ import EditSkill from "./components/Skills/EditSkill";
 import SkillDetails from "./components/Skills/SkillDetails";
 import SkillGraphs from "./components/Skills/SkillGraphs";
 import AddSkill from "./components/Skills/AddSkill";
-import Resources from "./components/Resources/Resources";
 import Tour from "./components/Website Tour/Tour";
 import AddTask from "./components/Tasks/AddTask";
 import TaskGraphs from "./components/Tasks/TaskGraphs";
@@ -31,6 +30,7 @@ import Contacts from "./components/Conctacts";
 import Paulo from "./components/Paulo";
 import Greg from "./components/Greg";
 import SimpleBot from "./components/SimpleBot/Bot";
+import ResourceCard from "./components/ResourceCards";
 
 
 function App() {
@@ -72,7 +72,8 @@ function App() {
           }} 
         />
         <PrivateRoute exact path="/home" component={HomePage} /> 
-        <Route exact path="/" component={LandingPage} /> 
+        <Route exact path="/" component={LandingPage} /> ~
+        <Route exact path="/resources" component={ResourceCard} /> 
 
         <PrivateRoute exact path="/tasks/add" component={AddTask} />
         <PrivateRoute exact path="/tasks/graphs" component={TaskGraphs} />
@@ -86,7 +87,6 @@ function App() {
         <PrivateRoute exact path="/user" component={UserDetails} />
         <PrivateRoute exact path="/affirmations" component={Affirmations} />
         <PrivateRoute exact path="/zen" component={Zen} />
-        <PrivateRoute exact path="/resources" component={Resources} />
         <PrivateRoute exact path="/tour" component={Tour} />
         <Route exact path="/simplebot" component={SimpleBot} />
         <PrivateRoute exact path="/contacts" component={Contacts} />

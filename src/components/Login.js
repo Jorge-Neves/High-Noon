@@ -24,7 +24,7 @@ import { toast } from "react-toastify";
         toast.success("Login success");
         console.log(response);
         setCurrentLoggedInUser(response.data); //Comes from the app component
-        history.push("/tasks");
+        history.push("/home");
       }
     } catch (e) {
       toast.error("Invalid login");

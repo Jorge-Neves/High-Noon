@@ -3,23 +3,11 @@ import React from "react";
 function Paulo() {
   return (
     <>
-      <img src="/paulo.png" alt="dev Paulo" />
-
-      <div class="wrapper">
-        <div class="icon facebook">
-          <div class="tooltip">Facebook</div>
-          <span>
-            <i class="fab fa-facebook-f"></i>
-          </span>
-        </div>
-
-        <div class="icon github">
-          <div class="tooltip">Github</div>
-          <span>
-            <i class="fab fa-github"></i>
-          </span>
-        </div>
-      </div>
+      <div className="container">
+        <img src="/paulo.png" alt="dev Paulo" className="dev-img" />
+        <a href="https://github.com/Jorge-Neves"  className="icons" > <img src="/github.png"/></a>
+        <a href="www.linkedin.com/in/paulo-j-santos" className="icons"> <img   src="/linkedin.png"/>linkedin </a>
+    </div>
     </>
   );
 }
