@@ -23,11 +23,6 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             </NavLink>
           </div>
           <div>
-            <NavLink activeStyle={{ color: "red" }} exact to="/">
-              Landing Page
-            </NavLink>
-          </div>
-          <div>
             <NavLink activeStyle={{ color: "red" }} exact to="/home">
               HomePage
             </NavLink>
