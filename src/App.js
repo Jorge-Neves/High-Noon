@@ -26,10 +26,13 @@ import EditTask from "./components/Tasks/EditTask";
 import Zen from "./components/Timer/Zen";
 import Affirmations from "./components/Timer/Affirmations";
 import TaskList from "./components/Tasks/TaskList";
-
-
 import "./components/NavBar.css"
+import Contacts from "./components/Conctacts";
+import Paulo from "./components/Paulo";
+import Greg from "./components/Greg";
 import SimpleBot from "./components/SimpleBot/Resources";
+
+
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
 
@@ -85,7 +88,10 @@ function App() {
         <PrivateRoute exact path="/zen" component={Zen} />
         <PrivateRoute exact path="/resources" component={Resources} />
         <PrivateRoute exact path="/tour" component={Tour} />
-        <Route exact path="/simplebot" component={SimpleBot} />
+        <PrivateRoute exact path="/simplebot" component={SimpleBot} />
+        <PrivateRoute exact path="/contacts" component={Contacts} />
+        <PrivateRoute exact path="/greg" component={Greg} />
+        <PrivateRoute exact path="/paulo" component={Paulo} />
 
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
@@ -97,7 +103,9 @@ function App() {
       </Switch>
       </LoggedUserProvider>
     </div>
-  );
+  );  
 }
 
 export default App;
+
+

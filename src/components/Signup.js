@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function Signup({loggedInUser, setCurrentLoggedInUser}) {
+ function Signup({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -14,19 +14,20 @@ function Signup({loggedInUser, setCurrentLoggedInUser}) {
       username,
       password,
     };
-    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/signup`, body);
-    toast.success("Signup success");
-    // history.push("/login");
-    const response = await axios.post(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
-      body,
-      { withCredentials: true }
-    );
-    if (response.data.username) {
-      toast.success("Login success");
-      console.log(response);
-      setCurrentLoggedInUser(response.data); //Comes from the app component
-      history.push("/tasks");
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
+        body,
+        { withCredentials: true }
+      );
+      if (response.data.username) {
+        toast.success("Signup success");
+        console.log(response);
+        setCurrentLoggedInUser(response.data); //Comes from the app component
+        history.push("/tasks");
+      }
+    } catch (e) {
+      toast.error("Invalid Signup");
     }
   };
 
@@ -50,11 +51,14 @@ function Signup({loggedInUser, setCurrentLoggedInUser}) {
 
         <button type="submit">Signup</button>
       </form>
-      Already have an account? Login <NavLink to="/login">here</NavLink>
+      
     </>
   );
+
+
 }
 
-export default Signup;
+ export default Signup;
+
 
 
