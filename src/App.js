@@ -30,7 +30,7 @@ import "./components/NavBar.css"
 import Contacts from "./components/Conctacts";
 import Paulo from "./components/Paulo";
 import Greg from "./components/Greg";
-import SimpleBot from "./components/SimpleBot/Resources";
+import SimpleBot from "./components/SimpleBot/Bot";
 
 
 function App() {
@@ -88,7 +88,7 @@ function App() {
         <PrivateRoute exact path="/zen" component={Zen} />
         <PrivateRoute exact path="/resources" component={Resources} />
         <PrivateRoute exact path="/tour" component={Tour} />
-        <PrivateRoute exact path="/simplebot" component={SimpleBot} />
+        <Route exact path="/simplebot" component={SimpleBot} />
         <PrivateRoute exact path="/contacts" component={Contacts} />
         <PrivateRoute exact path="/greg" component={Greg} />
         <PrivateRoute exact path="/paulo" component={Paulo} />

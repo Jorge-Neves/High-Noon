@@ -1,14 +1,14 @@
 import React from "react"
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-
+import "./Contacts.css"
 
 
 function Contacts(){
 return(
-    <>
+    <div className="contacts">
     <article class="flow">
-    <h1>Our Team</h1>
+    <h1 >Our Team</h1>
   <p>Hover or focus over each card to see the person’s job title slide in and the colour treatment change.</p>
   <div class="team">
   <ul class="auto-grid" role="list">
@@ -31,7 +31,7 @@ return(
     </div>  
      
       </article>
-      </>
+      </div>
 )
 }
 

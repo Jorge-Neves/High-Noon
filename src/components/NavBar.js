@@ -81,7 +81,7 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             <NavLink activeStyle={{ color: "red" }} to="/zen">
               Zen
             </NavLink>
-          </div>^
+          </div>
           <div>
             <NavLink activeStyle={{ color: "red" }} to="/contacts">
             Meet the Team

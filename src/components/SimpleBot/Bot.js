@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios"
 import ChatBot from 'react-simple-chatbot';
+import { LoggedUserConsumer} from "../../context/loggedUser"
 
-function SimpleBot(){
+function Bot(){
 
     return(
         <ChatBot
@@ -17,4 +18,4 @@ function SimpleBot(){
     )
 }
 
-export default SimpleBot;
+export default Bot;
