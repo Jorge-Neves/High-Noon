@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
-import "./Signup.css"
+import "./Login.css"
 import NavBarLanding from "./Navbars/NavBarLanding";
 import Footer from "./Navbars/Footer";
 import { toast, Slide, Zoom, Flip, Bounce } from "react-toastify";
@@ -74,9 +74,9 @@ function Login({ setCurrentLoggedInUser }) {
           value={password}
         />
 
-        <button type="submit">Login</button>
+        <button className="close-l button-l" type="submit">Login</button>
       </form>
-      Don't have an account? Register <NavLink to="/signup">here</NavLink>
+      Don't have an account? Register <NavLink to="/signup"><button className="close-l button-l" type="submit">Here</button></NavLink>
     </div>
     <div>
         <Footer />

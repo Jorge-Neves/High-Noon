@@ -14,10 +14,12 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
    return (
     <nav className="navi-h-bar" >
     <div className="navi-h-bar-mini">
-        <img src="../../logo.png" className="habits-logo-size" alt="high noon logo" />
-        <span className="habits-logo-text-size">
-          High Noon
-       </span>
+    <NavLink to ="/">
+            <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
+            <span className="landing-logo-text-size">
+              High Noon
+           </span>
+           </NavLink>
     </div>
    <div>
    <NavLink activeStyle={{ color: "red" }} to="/home">

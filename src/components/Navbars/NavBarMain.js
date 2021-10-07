@@ -14,10 +14,12 @@ function NavBarMain({ loggedInUser, setCurrentLoggedInUser }) {
    return(
        <nav className="navi-m-bar container-fluid" >
           <div className="navi-m-bar-mini">
-            <img src="../../logo.png" className="main-logo-size" alt="high noon logo" />
-            <span className="main-logo-text-size">
+          <NavLink to ="/">
+            <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
+            <span className="landing-logo-text-size">
               High Noon
            </span>
+           </NavLink>
            </div>
            <div>
              <NavLink exact to="/">

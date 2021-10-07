@@ -7,10 +7,12 @@ function NavBarTasks() {
    return (
     <nav className="navi-t-bar" >
     <div className="navi-t-bar-mini">
-        <img src="../../logo.png" className="tasks-logo-size" alt="high noon logo" />
-        <span className="tasks-logo-text-size">
-          High Noon
-       </span>
+    <NavLink to ="/">
+            <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
+            <span className="landing-logo-text-size">
+              High Noon
+           </span>
+           </NavLink>
     </div>
    <div>
    <NavLink activeStyle={{ color: "red" }} to="/home">
