@@ -38,11 +38,11 @@ function LandingPage(){
 
 export default LandingPage;
 
-<div className="landing-bg">
+{/* <div className="landing-bg">
             <div className="row">
                 
                   
             </div>
                 
             
-        </div>
+        </div> */}

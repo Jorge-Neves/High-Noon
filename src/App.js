@@ -30,7 +30,11 @@ import Greg from "./components/Greg";
 import SimpleBot from "./components/SimpleBot/Bot";
 import ResourceCard from "./components/ResourceCards";
 import SkillsList from "./components/Skills/SkillsList";
-
+import HabitList from "./components/Habits/HabitsList";
+import HabitGraphs from "./components/Habits/HabitGraphs"
+import HabitDetails from "./components/Habits/HabitDetails";
+import EditHabits from "./components/Habits/EditHabits";
+import AddHabits from "./components/Habits/AddHabits";
 
 function App() {
   const [loggedInUser, setCurrentLoggedInUser] = useState("");
@@ -99,6 +103,11 @@ function App() {
         <Route exact path="/contacts" component={Contacts} />
         <Route exact path="/greg" component={Greg} />
         <Route exact path="/paulo" component={Paulo} />
+        <Route exact path="/habits" component={HabitList} />
+        <Route exact path="/habit/graphs" component={HabitGraphs} />
+        <Route exact path="/habit/:id" component={HabitDetails} />
+        <Route exact path="/habits/:id/edit" component={EditHabits} />
+        <Route exact path="/habits/add" component={AddHabits} />
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
             () => {

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, Slide, Zoom, Flip, Bounce } from "react-toastify";
+import { style } from "react-toastify";
 
- function Login({ setCurrentLoggedInUser }) {
+function Login({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -21,13 +22,30 @@ import { toast } from "react-toastify";
         { withCredentials: true }
       );
       if (response.data.username) {
-        toast.success("Login success");
+        toast.success("Login success", {
+          position: "top-right",
+          autoClose: 900,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+      })
+
         console.log(response);
         setCurrentLoggedInUser(response.data); //Comes from the app component
         history.push("/home");
       }
     } catch (e) {
-      toast.error("Invalid login");
+      toast.error("Invalid login" , {
+        position: "top-right",
+        autoClose: 900,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    })
     }
   };
 
@@ -54,7 +72,6 @@ import { toast } from "react-toastify";
       Don't have an account? Register <NavLink to="/signup">here</NavLink>
     </>
   );
+}
 
- }
-
- export default Login;
+export default Login;
