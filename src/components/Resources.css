@@ -1,3 +1,9 @@
+.resources-bg{
+    background-image: url("../DeerNight.png");
+    background-repeat: none;
+    background-size: cover;
+}
+
 .container{
     width: 1000px;
     position: relative;

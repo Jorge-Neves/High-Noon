@@ -1,0 +1,33 @@
+.navi-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 60px;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    background-color: #10141b;
+    transition: background-color .3s ease-in;
+    position: fixed;
+    color: #fff;
+  }
+  
+  .navi-bar:hover {
+    background-color: #acad74;
+  }
+  
+  .navi-bar a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #cfcfcf;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  
+  .navi-bar button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+  }

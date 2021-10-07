@@ -7,6 +7,8 @@ import "./Signup.css"
  function Signup({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [usernameLogin, setUsernameLogin] = useState("");
+  const [passwordLogin, setPasswordLogin] = useState("");
   const history = useHistory();
 
   const handleFormSubmit = async (e) => {
@@ -32,28 +34,110 @@ import "./Signup.css"
     }
   };
 
+  
+  const handleFormSubmitLogin = async (e) => {
+    e.preventDefault();
+    const username = usernameLogin
+    const password = passwordLogin
+    const body = {
+      username,
+      password,
+    };
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
+        body,
+        { withCredentials: true }
+      );
+      if (response.data.username) {
+        toast.success("Login success");
+        console.log(response);
+        setCurrentLoggedInUser(response.data); //Comes from the app component
+        history.push("/home");
+      }
+    } catch (e) {
+      toast.error("Invalid login");
+    }
+  };
+
   return (
-    <>
-      <div class="row">
-    <div class="col-md-6 mx-auto p-0">
-        <div class="card">
-            <div class="login-box">
-                <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"/><label for="tab-2" class="tab">Sign Up</label>
-                    <div class="login-space">
-                        <div class="login">
-                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input" placeholder="Enter your username"/> </div>
-                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"/> </div>
-                            <div class="group"> <input type="submit" class="button" value="Sign In"/> </div>
-                            <div class="hr"></div>
+    <div className="signup-bg">
+      <div className="row">
+    <div className="col-md-6 mx-auto p-0">
+        <div className="card">
+           
+            <div className="login-box">
+                <div className="login-snip"> 
+                <input id="tab-1" type="radio" name="tab" className="sign-in" checked/>
+                <label for="tab-1" className="tab">Login</label> 
+                <input id="tab-2" type="radio" name="tab" className="sign-up"/>
+                <label for="tab-2" className="tab">Sign Up</label>
+                    <div className="login-space">
+                        <div className="login">
+                        <form onSubtmit={handleFormSubmitLogin}>
+                            <div className="group"> 
+                    
+                              <label for="user" className="label">Username</label> 
+                              <input 
+                              id="user" 
+                              type="text" 
+                              className="input" 
+                              onChange={(e) => setUsernameLogin(e.target.value)}
+                              value={usernameLogin}
+                              /> 
+                            </div>
+                            <div className="group">
+                              <label for="pass" className="label">Password</label> 
+                              <input 
+                              id="pass" 
+                              type="password" 
+                              className="input" 
+                              data-type="password" 
+                              onChange={(e) => setPasswordLogin(e.target.value)}
+                              value={passwordLogin}
+                              /> 
+                               
+                            </div>
+                            
+                            <div className="group"> 
+                            <button type="submit" className="button">Sign In</button>
+                      
+                            </div>
+                            </form>
+                            <div className="hr">
+                            </div>
                         </div>
-                        <div class="sign-up-form">
-                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input" placeholder="Create your Username"/> </div>
-                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"/> </div>
-                            <div class="group"> <label for="pass" class="label">Repeat Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"/> </div>
-                            <div class="group"> <input type="submit" class="button" value="Sign Up"/> </div>
-                            <div class="hr"></div>
-                            <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                     
+                      <form onSubmit={handleFormSubmit}>
+                        <div className="sign-up-form">
+                            <div className="group"> 
+                              <label for="user" className="label">Username</label> 
+                              <input 
+                              id="user" 
+                              type="text" 
+                              className="input" 
+                              onChange={(e) => setUsername(e.target.value)}
+                              value={username}/>
+                            </div>
+                            <div className="group"> 
+                              <label for="pass" className="label">Password</label> 
+                              <input 
+                              id="pass" 
+                              type="password" 
+                              className="input" 
+                              data-type="password" 
+                              onChange={(e) => setPassword(e.target.value)}
+                              value={password}/> 
+                            </div>
+                            <div className="group"> 
+                              <input type="submit" className="button" value="Sign Up"/> 
+                            </div>
+                            <div className="hr"></div>
+                            <div className="foot"> 
+                              <label for="tab-1">Already Member?</label> 
+                            </div>
                         </div>
+                      </form>
                     </div>
                 </div>
             </div>
@@ -62,7 +146,7 @@ import "./Signup.css"
 </div>
 
        
-    </>
+    </div>
   );
 
 
