@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer} from "../../context/loggedUser"
+import { LoggedUserConsumer } from "../../context/loggedUser";
+import "./SkillsDetails.css";
 
 function SkillDetails({ match }) {
   const [skills, setSkills] = useState({});
@@ -19,22 +20,21 @@ function SkillDetails({ match }) {
   }, []);
 
   const handleDeleteProject = async (id) => {
-    await axios.delete(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/skills/${id}`
-    );
+    await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/skills/${id}`);
     toast.info("Skill deleted");
     history.push("/");
   };
 
   return (
-    <>
-      <h2>{skills.name}</h2>
-      <h3>{skills.timeSpent}</h3>
-      
+    <div className="skills-details-bg">
+      <div className="row">
+        <h2>{skills.name}</h2>
+        <h3>{skills.timeSpent}</h3>
 
-      <NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink>
-      <button onClick={() => handleDeleteProject(skills._id)}>Delete</button>
-    </>
+        <NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink>
+        <button onClick={() => handleDeleteProject(skills._id)}>Delete</button>
+      </div>
+    </div>
   );
 }
 

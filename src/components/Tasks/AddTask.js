@@ -29,9 +29,9 @@ function AddTask() {
     <div className="task-add-bg">
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <h2>Add Task</h2>
+          <h2 className="add-task-text">Add Task</h2>
           <form onSubmit={handleFormSubmit}>
-            <label>Name</label>
+            <label className="add-task-text">Name</label>
             <input
               type="text"
               onChange={(e) => setName(e.target.value)}

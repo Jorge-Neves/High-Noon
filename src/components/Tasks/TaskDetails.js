@@ -29,10 +29,10 @@ function TaskDetails({ match }) {
     <div className="task-details-bg">
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <h2>{tasks.name}</h2>
-          <h3>{tasks.timeSpent}</h3>
+          <h2 className="details-task-text">{tasks.name}</h2>
+          <h3 className="details-task-text">{tasks.timeSpent}</h3>
 
-          <NavLink to={`/tasks/${tasks._id}/edit`}>Edit</NavLink>
+          <NavLink  className="details-task-text" to={`/tasks/${tasks._id}/edit`}>Edit</NavLink>
           <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
         </div>
       </div>

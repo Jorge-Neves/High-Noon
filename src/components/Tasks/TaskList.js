@@ -26,9 +26,9 @@ function TaskList() {
     <ul>
       {tasks.map((task) => {
         return (
-          <li key={task._id}>
+          <div className="task-text" key={task._id}>
             <NavLink to={`/tasks/${task._id}`}>{task.name}</NavLink>
-          </li>
+          </div>
         );
       })}
     </ul>

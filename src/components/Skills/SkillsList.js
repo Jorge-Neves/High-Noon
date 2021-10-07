@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { LoggedUserConsumer} from "../../context/loggedUser"
+import { LoggedUserConsumer } from "../../context/loggedUser";
+import "./SkillsList.css";
 
 function SkillsList() {
   const [skills, setSkills] = useState([]);
@@ -18,15 +19,19 @@ function SkillsList() {
   }, []);
 
   return (
-    <ul>
-      {skills.map((skill) => {
-        return (
-          <li key={skill._id}>
-            <NavLink to={`/skills/${skill._id}`}>{skill.name}</NavLink>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="skill-list-bg">
+      <div className="row">
+        <ul>
+          {skills.map((skill) => {
+            return (
+              <li key={skill._id}>
+                <NavLink to={`/skills/${skill._id}`}>{skill.name}</NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 }
 

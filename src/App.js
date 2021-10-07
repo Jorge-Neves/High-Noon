@@ -29,6 +29,7 @@ import Paulo from "./components/Paulo";
 import Greg from "./components/Greg";
 import SimpleBot from "./components/SimpleBot/Bot";
 import ResourceCard from "./components/ResourceCards";
+import SkillsList from "./components/Skills/SkillsList";
 
 
 function App() {
@@ -84,6 +85,7 @@ function App() {
         <Route exact path="/tasks/graphs" component={TaskGraphs} />
         <Route exact path="/tasks/:id" component={TaskDetails} />
         <Route exact path="/tasks/:id/edit" component={EditTask} />
+        <Route exact path="/skills" component={SkillsList} />
         <Route exact path="/skills/add" component={AddSkill} />
         <Route exact path="/skills/graphs" component={SkillGraphs} />
         <Route exact path="/skills/:id" component={SkillDetails} />

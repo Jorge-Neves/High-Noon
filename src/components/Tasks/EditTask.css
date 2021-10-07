@@ -1,5 +1,5 @@
 .task-edit-bg{
-    background-image: url("../../sakura.png");
+    background-image: url("../../BrightSun.jpg");
     background-repeat: none;
     height: 100vh;
     width: 100%;
@@ -14,4 +14,7 @@
 
 ::placeholder {
     color: #b3b3b3
+}
+.edit-task-text{
+    color: white;
 }
