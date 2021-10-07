@@ -12,20 +12,10 @@ function NavBarTasks({ loggedInUser, setCurrentLoggedInUser }) {
   };
 
    return (
-     <>
-       <div className="navi container-fluid">
-         <p>Welcome {loggedInUser.username}</p>
-       </div>
        <nav className="navi container-fluid" >
            <div>
-             <NavLink exact to="/">
-               <button onClick={logoutUser}>Logout</button>
-             </NavLink>
-           </div>
-        
-           <div>
              <NavLink activeStyle={{ color: "red" }} exact to="/home">
-               HomePage
+               Home
              </NavLink>
            </div>
            <div>
@@ -44,11 +34,46 @@ function NavBarTasks({ loggedInUser, setCurrentLoggedInUser }) {
              </NavLink>
            </div>
        </nav>
-     </>
    ) 
 
 
- 
+{/* <nav className="navi-t-bar" >
+   <div className="navi-t-bar-mini">
+       <img src="../../logo.png" className="tasks-logo-size" alt="high noon logo" />
+       <span className="tasks-logo-text-size">
+         High Noon
+      </span>
+   </div>
+  <div>
+  <NavLink activeStyle={{ color: "red" }} to="/signup">
+  <span className="tasks-logo-text-size">
+         Home
+      </span>
+      </NavLink>
+  </div>
+  <div>
+      <NavLink activeStyle={{ color: "red" }} exact to="/resources">
+      <span className="tasks-logo-text-size">
+         Tasks
+      </span>
+     </NavLink>
+ </div>
+ <div>
+      <NavLink activeStyle={{ color: "red" }} exact to="/resources">
+      <span className="tasks-logo-text-size">
+         Task Stats
+      </span>
+     </NavLink>
+ </div>
+ <div>
+      <NavLink activeStyle={{ color: "red" }} exact to="/resources">
+      <span className="tasks-logo-text-size">
+         Add Task
+      </span>
+     </NavLink>
+ </div>
+   
+</nav>  */}
 
    
   
