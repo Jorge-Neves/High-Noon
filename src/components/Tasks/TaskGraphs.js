@@ -13,14 +13,14 @@ function TaskGraphs() {
   useEffect(() => {
     async function getUserTaskNames() {
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/t/graphs`,
         { withCredentials: true }
       );
       const names = response.data;
       const namesArray = names.map((name) => {
         return [`${name.name}`];
       });
-      const numbers = response.data;
+   
       const numberssArray = names.map((name) => {
         return [name.timeSpent];
       });
@@ -31,17 +31,6 @@ function TaskGraphs() {
     }
     getUserTaskNames();
   }, []);
-
-  /* useEffect(() => {
-        async function getUserTaskTimes() {
-          const response = await axios.get(
-            `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/time`,
-            { withCredentials: true }
-          );
-          setTaskTimes(response.data.timeSpent);
-        }
-        getUserTaskTimes();
-      }, []); */
 
   const data = {
     labels: taskNames,
@@ -55,22 +44,14 @@ function TaskGraphs() {
   };
 
   return (
-    <div className="row-vertical-tasks">
+    <div className="task-graphs-bg row-vertical-tasks">
             <div>
               <NavBarTasks />
             </div>
-      <div className="row">
-        <div className="col-md-6 mx-auto p-0">
-          <div className="header">
-            <h1 className="title">Doughnut Chart</h1>
-            <div className="links"></div>
-          </div>
-
           <div>
             <Doughnut data={data} />
           </div>
-        </div>
-      </div>
+        
       <div>
               <Footer />
          </div>

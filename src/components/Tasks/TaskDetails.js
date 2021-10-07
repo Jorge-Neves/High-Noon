@@ -41,7 +41,7 @@ function TaskDetails({ match }) {
           <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
         </div>
       </div>
-      <div>
+       <div>
               <Footer />
             </div>
     </div>

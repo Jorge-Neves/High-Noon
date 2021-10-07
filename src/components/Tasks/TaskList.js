@@ -28,15 +28,27 @@ function TaskList() {
             <div className="row">
                 <div className="col-md-6 mx-auto p-0">
                     
-    <ul>
+    <div className="container">
       {tasks.map((task) => {
         return (
-          <div className="task-text" key={task._id}>
-            <NavLink to={`/tasks/${task._id}`}>{task.name}</NavLink>
-          </div>
+          <div className="card">
+      <div className="face face1">
+        <div className="content">
+          <img src="/reddit.png" />
+          <NavLink to={`/tasks/${task._id}`}><h3>{task.name}</h3></NavLink>
+        </div>
+      </div>
+      <div className="face face2">
+        <div className="content">
+          <p>
+            {task.timeSpent}
+          </p>
+        </div>
+      </div>
+    </div>
         );
       })}
-    </ul>
+    </div>
                 </div>
             </div>
             <div>

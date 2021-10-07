@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitEdit.css"
+import NavBarHabits from "../Navbars/NavBarHabits";
+import Footer from "../Navbars/Footer";
 
 function EditHabit({ match }) {
   const [habit, setHabit] = useState("");
@@ -47,7 +49,10 @@ function EditHabit({ match }) {
   };
 
   return (
-    <div className="habits-edit-bg">
+    <div className="habits-edit-bg row-vertical-habits">
+        <div>
+        <NavBarHabits />
+      </div>
       <div className="row">
         <h2>Edit Habit</h2>
         <form onSubmit={handleFormSubmit}>
@@ -67,6 +72,9 @@ function EditHabit({ match }) {
 
           <button type="submit">Update</button>
         </form>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ function ResourceCard() {
   return (
   <>
   <div className="container-fluid">
-  <NavBarLanding />
+    <NavBarLanding />
   </div>
  
   <div className="container-fluid resources-bg" >
