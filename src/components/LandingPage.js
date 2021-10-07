@@ -11,16 +11,21 @@ function LandingPage(){
     return(
         <div className="landing-bg">
             <div className="row">
-                <div className="col-md-6 mx-auto p-0">
+                
                     <div>
                         <NavBarLanding />
                     </div>
-                    <button></button>
+            </div>
+            <div className="row">
+                    <button>Test</button>
+                    </div>
+            <div className="row">
                     <div>
                         <Footer />
                     </div>
-                </div>
             </div>
+                
+            
         </div>
   
          

@@ -6,7 +6,7 @@ import"./Footer.css"
 function Footer() {
  
    return (  
-       <nav className="navi-bar container-fluid" >
+       <nav className="footer-bar container-fluid" >
            <div>
              <NavLink activeStyle={{ color: "red" }} exact to="/home">
                Contact Us
