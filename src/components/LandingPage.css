@@ -1,17 +1,59 @@
 .landing-bg{
     background-image: url("../sakura.png");
-    background-repeat: none;
     height: 100vh;
     width: 100%;
     background-size: 100% 100%;
 }
 
 
-.card {
-    width: 500px;
-    left: 100px
+.row-vertical-landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
-::placeholder {
-    color: #b3b3b3
+
+
+
+.close-l:hover,
+.close-l:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+.close-l {
+  --color: #fff;
+  --hover: #ffdc7f;
+}
+
+.button-l {
+  color: var(--color);
+  transition: 0.25s;
+}
+
+
+.button-l:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+
+
+.button-l {
+  background: #492258;
+  border: 3px solid;
+  border-radius: 15px;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.h-l {
+  font-weight: 400;
+}
+
+.code-l {
+  color: #e4cb58;
+  font: inherit;
 }
