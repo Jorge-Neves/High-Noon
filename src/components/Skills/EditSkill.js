@@ -36,7 +36,15 @@ function EditSkill({ match }) {
       body
     );
 
-    toast.success("Skill updated");
+    toast.success("Skill updated" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/skills");
   };
 

@@ -36,7 +36,15 @@ function EditTask({ match }) {
       body
     );
 
-    toast.success("Task updated");
+    toast.success("Task updated" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/tasks");
   };
 

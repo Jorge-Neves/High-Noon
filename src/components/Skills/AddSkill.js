@@ -23,7 +23,15 @@ function AddSkill() {
     };
 
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/skills`, body);
-    toast.success("Skill created");
+    toast.success("Skill created" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/skills");
   };
 
