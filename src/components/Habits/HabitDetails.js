@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer} from "../../context/loggedUser"
+import { LoggedUserConsumer } from "../../context/loggedUser";
+import "./HabitDetails.css"
 
 function HabitDetails({ match }) {
   const [habits, setHabits] = useState({});
@@ -19,22 +20,21 @@ function HabitDetails({ match }) {
   }, []);
 
   const handleDeleteProject = async (id) => {
-    await axios.delete(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${id}`
-    );
+    await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${id}`);
     toast.info("Habit deleted");
     history.push("/");
   };
 
   return (
-    <>
-      <h2>{habits.name}</h2>
-      <h3>{habits.timeSpent}</h3>
-      
+    <div className="landing-bg">
+      <div className="row">
+        <h2>{habits.name}</h2>
+        <h3>{habits.timeSpent}</h3>
 
-      <NavLink to={`/habits/${habits._id}/edit`}>Edit</NavLink>
-      <button onClick={() => handleDeleteProject(habits._id)}>Delete</button>
-    </>
+        <NavLink to={`/habits/${habits._id}/edit`}>Edit</NavLink>
+        <button onClick={() => handleDeleteProject(habits._id)}>Delete</button>
+      </div>
+    </div>
   );
 }
 

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
 import "./Signup.css"
 import NavBarLanding from "./Navbars/NavBarLanding";
 import Footer from "./Navbars/Footer";
+import { toast, Slide, Zoom, Flip, Bounce } from "react-toastify";
+import { style } from "react-toastify";
 
- function Login({ setCurrentLoggedInUser }) {
+function Login({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -24,13 +25,30 @@ import Footer from "./Navbars/Footer";
         { withCredentials: true }
       );
       if (response.data.username) {
-        toast.success("Login success");
+        toast.success("Login success", {
+          position: "top-right",
+          autoClose: 900,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+      })
+
         console.log(response);
         setCurrentLoggedInUser(response.data); //Comes from the app component
         history.push("/home");
       }
     } catch (e) {
-      toast.error("Invalid login");
+      toast.error("Invalid login" , {
+        position: "top-right",
+        autoClose: 900,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    })
     }
   };
 
@@ -65,7 +83,6 @@ import Footer from "./Navbars/Footer";
       </div>
     </div>
   );
+}
 
- }
-
- export default Login;
+export default Login;

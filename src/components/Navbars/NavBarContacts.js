@@ -24,7 +24,7 @@ function NavBarContacts({ loggedInUser, setCurrentLoggedInUser }) {
            </div>
         
            <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/home">
+             <NavLink activeStyle={{ color: "red" }} exact to="/contacts">
                HomePage
              </NavLink>
            </div>
