@@ -1,7 +1,7 @@
-.navi-bar{
+.navi-l-bar{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
   background-color: #10141b;
@@ -9,11 +9,21 @@
   color: #fff;
 }
 
-.navi-bar:hover {
+.navi-l-bar-mini{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  transition: background-color .3s ease-in;
+  color: #fff;
+}
+
+.navi-l-bar:hover {
   background-color: #acad74;
 }
 
-.navi-bar a {
+.navi-l-bar a {
   text-decoration: none;
   cursor: pointer;
   padding: 10px 20px;
@@ -21,9 +31,26 @@
   font-size: 1em;
   font-weight: 600;
 }
+.navi-l-bar span{
+ margin-top: 0;
+ margin-bottom: 0;
+ margin-left: 5px;
+ margin-right: 5px;
+ padding: 0;
+}
 
-.navi-bar button {
+.navi-l-bar button {
   background-color: transparent;
   border: none;
   color: #fff;
+}
+
+.landing-logo-size {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
+}
+
+.landing-logo-text-size{
+  font-size: 30px;
 }
