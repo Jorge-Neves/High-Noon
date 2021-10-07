@@ -6,7 +6,7 @@ import "./HabitsList.css"
 import NavBarHabits from "../Navbars/NavBarHabits";
 import Footer from "../Navbars/Footer";
 
-function HabitList() {
+function HabitsList() {
   const [habits, setHabits] = useState([]);
 
   useEffect(() => {
@@ -27,10 +27,10 @@ function HabitList() {
       </div>
       <div className="row">
         <ul>
-          {habits.map((task) => {
+          {habits.map((habit) => {
             return (
-              <li key={task._id}>
-                <NavLink to={`/habits/${habits._id}`}>{habits.name}</NavLink>
+              <li key={habit._id}>
+                <NavLink to={`/habits/${habit._id}`}>{habit.name}</NavLink>
               </li>
             );
           })}
@@ -43,5 +43,4 @@ function HabitList() {
   );
 }
 
-
-export default HabitList;
+export default HabitsList;
