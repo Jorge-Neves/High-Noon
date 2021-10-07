@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer} from "../../context/loggedUser"
+import "./TaskList.css";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -18,6 +19,10 @@ function TaskList() {
   }, []);
 
   return (
+    <div className="task-list-bg">
+            <div className="row">
+                <div className="col-md-6 mx-auto p-0">
+                    
     <ul>
       {tasks.map((task) => {
         return (
@@ -27,6 +32,13 @@ function TaskList() {
         );
       })}
     </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
   );
 }
 

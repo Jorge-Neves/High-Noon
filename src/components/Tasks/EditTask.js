@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-import { LoggedUserConsumer} from "../../context/loggedUser"
+import { LoggedUserConsumer } from "../../context/loggedUser";
+import "./EditTask.css"
 
 function EditTask({ match }) {
   const [name, setName] = useState("");
@@ -38,26 +39,30 @@ function EditTask({ match }) {
   };
 
   return (
-    <>
-      <h2>Edit Task</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
+    <div className="task-edit-bg">
+      <div className="row">
+        <div className="col-md-6 mx-auto p-0">
+          <h2>Edit Task</h2>
+          <form onSubmit={handleFormSubmit}>
+            <label>Name</label>
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
 
-        <label>Time Spent</label>
-        <input
-          type="number"
-          onChange={(e) => setTimeSpent(e.target.value)}
-          value={timeSpent}
-        />
+            <label>Time Spent</label>
+            <input
+              type="number"
+              onChange={(e) => setTimeSpent(e.target.value)}
+              value={timeSpent}
+            />
 
-        <button type="submit">Update</button>
-      </form>
-    </>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
