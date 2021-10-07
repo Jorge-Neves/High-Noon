@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios"
 import ChatBot from 'react-simple-chatbot';
 import { LoggedUserConsumer} from "../../context/loggedUser"
+import AffirmationJSON from "../../seeds/Affirmation.json"
 
 function Bot(){
+
+  function Affirmations(){
+    const [affirm, setAffirm] = useState(AffirmationJSON);
+    
+    useEffect(() => {
+        async function randomAfirm() {
+            const index = Math.floor(Math.random() * AffirmationJSON.length);
+            const newRandomAffirm = AffirmationJSON[index];
+            
+         
+          setAffirm(newRandomAffirm);
+        };
+          randomAfirm();
+
+    },[])
+
+    return affirm.name
+
+  }
 
   const random = Math.floor((Math.random() * 1000000) + 300000)
   const remainder = 1500000 - random
@@ -25,6 +45,7 @@ function Bot(){
 
     return(
         <ChatBot
+        speechSynthesis={{ enable: true, lang: 'en' }}
   steps={[
     {
       id: '1',
@@ -45,7 +66,7 @@ function Bot(){
     },
     {
       id: '3',
-      message: '~ Take some time for yourself ~',
+      message: 'Take some time for yourself',
       trigger: '3u'
     },
     {
@@ -57,7 +78,7 @@ function Bot(){
     },
     {
       id: '4',
-      message: '~ A moment of focus ~',
+      message: 'A moment of focus',
       trigger: '4u',
     },
     {
@@ -69,7 +90,7 @@ function Bot(){
     },
     {
       id: '6',
-      message: '~ Everything will be okay ~',
+      message: `${Affirmations()}`,
       options: [
         { value: 1, label: 'Back', trigger: '7' },
 

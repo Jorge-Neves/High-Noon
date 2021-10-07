@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios"
 import { LoggedUserConsumer} from "../context/loggedUser"
 import Contacts from "./Conctacts";
+import "./HomePage.css"
 function HomePage(){
-
+    const loggedInUser = useContext(LoggedUserConsumer)
     return(
-        <>
-        <h2>HomePage (user is logged in) </h2>
-        <Contacts />
-        </>
+    <>
+        <div className="home-bg">
+             <div className="home-bg"> 
+             <br/>
+                <h1> welcome</h1>
+             <br/>
+            </div>  
+        </div>
+        <div className="container">
+            <Contacts />
+        </div>
+    </>
     )
 }
 

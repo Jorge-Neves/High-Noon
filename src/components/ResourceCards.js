@@ -2,21 +2,27 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import "./Resources.css";
+import NavBarLanding from "./Navbars/NavBarLanding";
 
 function ResourceCard() {
   
   return (
   <>
-  <div class="container">
-    <div class="card">
-      <div class="face face1">
-        <div class="content">
+  <div className="container-fluid">
+  <NavBarLanding />
+  </div>
+ 
+  <div className="container-fluid resources-bg" >
+  <div className="container">
+    <div className="card">
+      <div className="face face1">
+        <div className="content">
           <img src="/reddit.png" />
           <h3>Reddit ADHD</h3>
         </div>
       </div>
-      <div class="face face2">
-        <div class="content">
+      <div className="face face2">
+        <div className="content">
           <p>
             A reddit forum for people with ADHD 
           </p>
@@ -25,15 +31,15 @@ function ResourceCard() {
       </div>
     </div>
 
-    <div class="card">
-      <div class="face face1">
-        <div class="content">
+    <div className="card">
+      <div className="face face1">
+        <div className="content">
           <img src="/worldorg.png" />
           <h3>ADHD Federation</h3>
         </div>
       </div>
-      <div class="face face2">
-        <div class="content">
+      <div className="face face2">
+        <div className="content">
           <p>
             A whordl wide organization to help people with ADHD and their families
           </p>
@@ -42,15 +48,15 @@ function ResourceCard() {
       </div>
     </div>
 
-    <div class="card">
-      <div class="face face1">
-        <div class="content">
+    <div className="card">
+      <div className="face face1">
+        <div className="content">
           <img src="/public/spada_logo_normal.png" />
           <h3>Portuguese ADHD association</h3>
         </div>
       </div>
-      <div class="face face2">
-        <div class="content">
+      <div className="face face2">
+        <div className="content">
           <p>
           Portuguese ADHD association
           </p>
@@ -59,6 +65,7 @@ function ResourceCard() {
       </div>
     </div>
 </div>
+  </div>
   </>
   )
 }

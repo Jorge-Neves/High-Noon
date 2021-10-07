@@ -2,7 +2,6 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
@@ -25,7 +24,6 @@ import EditTask from "./components/Tasks/EditTask";
 import Zen from "./components/Timer/Zen";
 import Affirmations from "./components/Timer/Affirmations";
 import TaskList from "./components/Tasks/TaskList";
-import "./components/NavBar.css"
 import Contacts from "./components/Conctacts";
 import Paulo from "./components/Paulo";
 import Greg from "./components/Greg";
@@ -53,12 +51,21 @@ function App() {
     <div className="App">
       <ToastContainer />
       <LoggedUserProvider value={loggedInUser}>
-      <NavBar className
+      {/* <NavBar className
         loggedInUser={loggedInUser}
         setCurrentLoggedInUser={setCurrentLoggedInUser}
-      />
+      /> */}
       <Switch>
-        <PrivateRoute exact path="/tasks" component={TaskList} />
+      <Route
+          exact
+          path="/"
+          render={() => {
+            return <LandingPage 
+            loggedInUser={loggedInUser}
+            setCurrentLoggedInUser={setCurrentLoggedInUser} />;
+          }} 
+        />
+        <Route exact path="/tasks" component={TaskList} />
         <Route exact path="/signup" render={() => {
               return <Signup 
               loggedInUser={loggedInUser}
@@ -71,28 +78,25 @@ function App() {
             return <Login setCurrentLoggedInUser={setCurrentLoggedInUser} />;
           }} 
         />
-        <PrivateRoute exact path="/home" component={HomePage} /> 
-        <Route exact path="/" component={LandingPage} /> ~
+        <Route exact path="/home" component={HomePage} /> 
         <Route exact path="/resources" component={ResourceCard} /> 
-
-        <PrivateRoute exact path="/tasks/add" component={AddTask} />
-        <PrivateRoute exact path="/tasks/graphs" component={TaskGraphs} />
-        <PrivateRoute exact path="/tasks/:id" component={TaskDetails} />
-        <PrivateRoute exact path="/tasks/:id/edit" component={EditTask} />
-        <PrivateRoute exact path="/skills/add" component={AddSkill} />
-        <PrivateRoute exact path="/skills/graphs" component={SkillGraphs} />
-        <PrivateRoute exact path="/skills/:id" component={SkillDetails} />
-        <PrivateRoute exact path="/skills/:id/edit" component={EditSkill} />
-        <PrivateRoute exact path="/user/stats" component={UserStats} />
-        <PrivateRoute exact path="/user" component={UserDetails} />
-        <PrivateRoute exact path="/affirmations" component={Affirmations} />
-        <PrivateRoute exact path="/zen" component={Zen} />
-        <PrivateRoute exact path="/tour" component={Tour} />
+        <Route exact path="/tasks/add" component={AddTask} />
+        <Route exact path="/tasks/graphs" component={TaskGraphs} />
+        <Route exact path="/tasks/:id" component={TaskDetails} />
+        <Route exact path="/tasks/:id/edit" component={EditTask} />
+        <Route exact path="/skills/add" component={AddSkill} />
+        <Route exact path="/skills/graphs" component={SkillGraphs} />
+        <Route exact path="/skills/:id" component={SkillDetails} />
+        <Route exact path="/skills/:id/edit" component={EditSkill} />
+        <Route exact path="/user/stats" component={UserStats} />
+        <Route exact path="/user" component={UserDetails} />
+        <Route exact path="/affirmations" component={Affirmations} />
+        <Route exact path="/zen" component={Zen} />
+        <Route exact path="/tour" component={Tour} />
         <Route exact path="/simplebot" component={SimpleBot} />
-        <PrivateRoute exact path="/contacts" component={Contacts} />
-        <PrivateRoute exact path="/greg" component={Greg} />
-        <PrivateRoute exact path="/paulo" component={Paulo} />
-
+        <Route exact path="/contacts" component={Contacts} />
+        <Route exact path="/greg" component={Greg} />
+        <Route exact path="/paulo" component={Paulo} />
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
             () => {
