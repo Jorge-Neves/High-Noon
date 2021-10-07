@@ -6,6 +6,13 @@
   background-size: 100% 100%;
 }
 
+.row-vertical-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
 .card {
   width: 500px;
   left: 100px;

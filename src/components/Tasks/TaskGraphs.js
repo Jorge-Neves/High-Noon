@@ -3,6 +3,8 @@ import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./TaskGraphs.css"
+import NavBarTasks from "../Navbars/NavBarTasks";
+import Footer from "../Navbars/Footer";
 
 function TaskGraphs() {
   const [taskNames, setTaskNames] = useState([]);
@@ -53,7 +55,10 @@ function TaskGraphs() {
   };
 
   return (
-    <div className="task-graphs-bg">
+    <div className="task-list-bg row-vertical-tasks">
+            <div>
+              <NavBarTasks />
+            </div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
           <div className="header">
@@ -66,6 +71,9 @@ function TaskGraphs() {
           </div>
         </div>
       </div>
+      <div>
+              <Footer />
+         </div>
     </div>
   );
 }

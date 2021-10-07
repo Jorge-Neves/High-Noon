@@ -4,6 +4,8 @@ import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./TaskDetails.css"
+import NavBarTasks from "../Navbars/NavBarTasks";
+import Footer from "../Navbars/Footer";
 
 function TaskDetails({ match }) {
   const [tasks, setTasks] = useState({});
@@ -26,7 +28,10 @@ function TaskDetails({ match }) {
   };
 
   return (
-    <div className="task-details-bg">
+    <div className="task-list-bg row-vertical-tasks">
+    <div>
+      <NavBarTasks />
+    </div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
           <h2 className="details-task-text">{tasks.name}</h2>
@@ -36,6 +41,9 @@ function TaskDetails({ match }) {
           <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
         </div>
       </div>
+      <div>
+              <Footer />
+            </div>
     </div>
   );
 }

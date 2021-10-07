@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./AddTask.css";
+import NavBarTasks from "../Navbars/NavBarTasks";
+import Footer from "../Navbars/Footer";
 
 function AddTask() {
   const loggedInUser = useContext(LoggedUserConsumer);
@@ -26,7 +28,10 @@ function AddTask() {
   };
 
   return (
-    <div className="task-add-bg">
+    <div className="task-list-bg row-vertical-tasks">
+    <div>
+      <NavBarTasks />
+    </div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
           <h2 className="add-task-text">Add Task</h2>
@@ -42,6 +47,9 @@ function AddTask() {
           </form>
         </div>
       </div>
+      <div>
+              <Footer />
+            </div>
     </div>
   );
 }

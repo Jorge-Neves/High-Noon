@@ -12,39 +12,43 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
   };
 
    return (
-     <>
-       <div className="navi-h-bar container-fluid">
-         <p>Welcome {loggedInUser.username}</p>
-       </div>
-       <nav className="navi-h-bar container-fluid" >
-           <div>
-             <NavLink exact to="/">
-               <button onClick={logoutUser}>Logout</button>
-             </NavLink>
-           </div>
-        
-           <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/home">
-               HomePage
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
-               Tasks
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
-               Tasks Stats
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
-               Add Tasks
-             </NavLink>
-           </div>
-       </nav>
-     </>
+    <nav className="navi-h-bar" >
+    <div className="navi-h-bar-mini">
+        <img src="../../logo.png" className="habits-logo-size" alt="high noon logo" />
+        <span className="habits-logo-text-size">
+          High Noon
+       </span>
+    </div>
+   <div>
+   <NavLink activeStyle={{ color: "red" }} to="/home">
+   <span className="habits-logo-text-size">
+          Home
+       </span>
+       </NavLink>
+   </div>
+   <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/habits">
+       <span className="habits-logo-text-size">
+          Habits
+       </span>
+      </NavLink>
+  </div>
+  <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/habits/graphs">
+       <span className="habitss-logo-text-size">
+          Habit Stats
+       </span>
+      </NavLink>
+  </div>
+  <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/habits/add">
+       <span className="habits-logo-text-size">
+          Add Habit
+       </span>
+      </NavLink>
+  </div>
+    
+ </nav> 
    ) 
 
 

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import "./Signup.css"
+import NavBarLanding from "./Navbars/NavBarLanding";
+import Footer from "./Navbars/Footer";
 
  function Login({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
@@ -32,7 +35,11 @@ import { toast } from "react-toastify";
   };
 
   return (
-    <>
+    <div className="signup-bg row-vertical-signup ">
+      <div>
+        <NavBarLanding />
+      </div>
+      <div>
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>
@@ -52,7 +59,11 @@ import { toast } from "react-toastify";
         <button type="submit">Login</button>
       </form>
       Don't have an account? Register <NavLink to="/signup">here</NavLink>
-    </>
+    </div>
+    <div>
+        <Footer />
+      </div>
+    </div>
   );
 
  }

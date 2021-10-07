@@ -1,20 +1,26 @@
 .navi-t-bar{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #10141b;
+    transition: background-color .3s ease-in;
+    color: #fff;
+  }
+  
+  .navi-t-bar-mini{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    height: 60px;
-    margin-bottom: 20px;
-    margin-top: 80px;
-    background-color: transparent;
     transition: background-color .3s ease-in;
-    position: fixed;
     color: #fff;
   }
   
   .navi-t-bar:hover {
-    background-color: #10141b;
+    background-color: #acad74;
   }
   
   .navi-t-bar a {
@@ -25,9 +31,26 @@
     font-size: 1em;
     font-weight: 600;
   }
+  .navi-t-bar span{
+   margin-top: 0;
+   margin-bottom: 0;
+   margin-left: 5px;
+   margin-right: 5px;
+   padding: 0;
+  }
   
-  .navi-bar button {
+  .navi-t-bar button {
     background-color: transparent;
     border: none;
     color: #fff;
+  }
+  
+  .tasks-logo-size {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px;
+  }
+  
+  .tasks-logo-text-size{
+    font-size: 30px;
   }

@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer} from "../../context/loggedUser"
 import "./TaskList.css";
+import NavBarTasks from "../Navbars/NavBarTasks";
+import Footer from "../Navbars/Footer";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -19,7 +21,10 @@ function TaskList() {
   }, []);
 
   return (
-    <div className="task-list-bg">
+    <div className="task-list-bg row-vertical-tasks">
+            <div>
+              <NavBarTasks />
+            </div>
             <div className="row">
                 <div className="col-md-6 mx-auto p-0">
                     
@@ -33,6 +38,9 @@ function TaskList() {
       })}
     </ul>
                 </div>
+            </div>
+            <div>
+              <Footer />
             </div>
         </div>
 

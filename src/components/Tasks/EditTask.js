@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./EditTask.css"
+import NavBarTasks from "../Navbars/NavBarTasks";
+import Footer from "../Navbars/Footer";
 
 function EditTask({ match }) {
   const [name, setName] = useState("");
@@ -39,7 +41,10 @@ function EditTask({ match }) {
   };
 
   return (
-    <div className="task-edit-bg">
+    <div className="task-list-bg row-vertical-tasks">
+    <div>
+      <NavBarTasks />
+    </div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
           <h2 className="edit-task-text">Edit Task</h2>
@@ -62,6 +67,9 @@ function EditTask({ match }) {
           </form>
         </div>
       </div>
+      <div>
+              <Footer />
+            </div>
     </div>
   );
 }

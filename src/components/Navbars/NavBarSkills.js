@@ -3,51 +3,49 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import"./NavBarSkills.css"
 
-function NavBarSkills({ loggedInUser, setCurrentLoggedInUser }) {
-  const logoutUser = async () => {
-    await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/logout`, null, {
-      withCredentials: true,
-    });
-    setCurrentLoggedInUser("");
-  };
-
+function NavBarSkills() {
+  
    return (
-     <>
-       <div className="navi container-fluid">
-         <p>Welcome {loggedInUser.username}</p>
-       </div>
-       <nav className="navi container-fluid" >
-           <div>
-             <NavLink exact to="/">
-               <button onClick={logoutUser}>Logout</button>
-             </NavLink>
-           </div>
-        
-           <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/home">
-               HomePage
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
-               Tasks
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
-               Tasks Stats
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
-               Add Tasks
-             </NavLink>
-           </div>
-       </nav>
-     </>
+    <nav className="navi-s-bar" >
+    <div className="navi-s-bar-mini">
+        <img src="../../logo.png" className="skills-logo-size" alt="high noon logo" />
+        <span className="skills-logo-text-size">
+          High Noon
+       </span>
+    </div>
+   <div>
+   <NavLink activeStyle={{ color: "red" }} to="/home">
+   <span className="skills-logo-text-size">
+          Home
+       </span>
+       </NavLink>
+   </div>
+   <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/skills">
+       <span className="skills-logo-text-size">
+          Skills
+       </span>
+      </NavLink>
+  </div>
+  <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/skills/graphs">
+       <span className="skills-logo-text-size">
+          Skill Stats
+       </span>
+      </NavLink>
+  </div>
+  <div>
+       <NavLink activeStyle={{ color: "red" }} exact to="/skills/add">
+       <span className="skills-logo-text-size">
+          Add Skill
+       </span>
+      </NavLink>
+  </div>
+    
+ </nav> 
    ) 
 
-
+ 
  
 
    

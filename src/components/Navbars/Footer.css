@@ -1,3 +1,34 @@
+
+
+.footer-bar-mini{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  transition: background-color .3s ease-in;
+  color: #fff;
+}
+
+.footer-bar span{
+ margin-top: 0;
+ margin-bottom: 0;
+ margin-left: 5px;
+ margin-right: 5px;
+ padding: 0;
+}
+
+
+.footer-logo-size {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
+}
+
+.footer-logo-text-size{
+  font-size: 30px;
+}
+
 .footer-bar{
     display: flex;
     flex-direction: row;
@@ -29,3 +60,5 @@
     border: none;
     color: #fff;
   }
+
+  

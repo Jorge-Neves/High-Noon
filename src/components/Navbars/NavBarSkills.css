@@ -1,20 +1,26 @@
 .navi-s-bar{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #10141b;
+    transition: background-color .3s ease-in;
+    color: #fff;
+  }
+  
+  .navi-s-bar-mini{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    height: 60px;
-    margin-bottom: 20px;
-    margin-top: 80px;
-    background-color: transparent;
     transition: background-color .3s ease-in;
-    position: fixed;
     color: #fff;
   }
   
   .navi-s-bar:hover {
-    background-color: #10141b;
+    background-color: #acad74;
   }
   
   .navi-s-bar a {
@@ -25,9 +31,26 @@
     font-size: 1em;
     font-weight: 600;
   }
+  .navi-s-bar span{
+   margin-top: 0;
+   margin-bottom: 0;
+   margin-left: 5px;
+   margin-right: 5px;
+   padding: 0;
+  }
   
   .navi-s-bar button {
     background-color: transparent;
     border: none;
     color: #fff;
+  }
+  
+  .skils-logo-size {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px;
+  }
+  
+  .skills-logo-text-size{
+    font-size: 30px;
   }

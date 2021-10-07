@@ -22,6 +22,13 @@ function NavBarLanding() {
            </NavLink>
        </div>
        <div>
+           <NavLink activeStyle={{ color: "red" }} exact to="/login">
+           <span className="landing-logo-text-size">
+              Login
+           </span>
+          </NavLink>
+      </div>
+       <div>
            <NavLink activeStyle={{ color: "red" }} exact to="/resources">
            <span className="landing-logo-text-size">
               Resources
