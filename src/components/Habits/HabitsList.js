@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitsList.css"
 
-function HabitList() {
+function HabitsList() {
   const [habits, setHabits] = useState([]);
 
   useEffect(() => {
@@ -22,10 +22,10 @@ function HabitList() {
     <div className="habits-list-bg">
       <div className="row">
         <ul>
-          {habits.map((task) => {
+          {habits.map((habit) => {
             return (
-              <li key={task._id}>
-                <NavLink to={`/habits/${habits._id}`}>{habits.name}</NavLink>
+              <li key={habit._id}>
+                <NavLink to={`/habits/${habit._id}`}>{habit.name}</NavLink>
               </li>
             );
           })}
@@ -35,4 +35,4 @@ function HabitList() {
   );
 }
 
-export default HabitList;
+export default HabitsList;
