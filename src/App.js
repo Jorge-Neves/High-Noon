@@ -79,7 +79,7 @@ function App() {
             return <Login setCurrentLoggedInUser={setCurrentLoggedInUser} />;
           }} 
         />
-        <Route exact path="/home" component={HomePage} /> 
+        <PrivateRoute exact path="/home" component={HomePage} /> 
         <Route exact path="/resources" component={ResourceCard} /> 
         <Route exact path="/tasks/add" component={AddTask} />
         <Route exact path="/tasks/graphs" component={TaskGraphs} />

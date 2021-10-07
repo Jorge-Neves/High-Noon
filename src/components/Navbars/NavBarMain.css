@@ -1,33 +1,56 @@
 .navi-m-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    height: 60px;
-    margin-bottom: 20px;
-    margin-top: 80px;
-    background-color: transparent;
-    transition: background-color .3s ease-in;
-    position: fixed;
-    color: #fff;
-  }
-  
-  .navi-m-bar:hover {
-    background-color: #10141b;
-  }
-  
-  .navi-m-bar a {
-    text-decoration: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    color: #cfcfcf;
-    font-size: 1em;
-    font-weight: 600;
-  }
-  
-  .navi-m-bar button {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: #10141b;
+  transition: background-color .3s ease-in;
+  color: #fff;
+}
+
+.navi-m-bar-mini{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  transition: background-color .3s ease-in;
+  color: #fff;
+}
+
+.navi-m-bar:hover {
+  background-color: #acad74;
+}
+
+.navi-m-bar a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #cfcfcf;
+  font-size: 1em;
+  font-weight: 600;
+}
+.navi-m-bar span{
+ margin-top: 0;
+ margin-bottom: 0;
+ margin-left: 5px;
+ margin-right: 5px;
+ padding: 0;
+}
+
+.navi-m-bar button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.main-logo-size {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
+}
+
+.main-logo-text-size{
+  font-size: 30px;
+}

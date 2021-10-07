@@ -11,117 +11,51 @@ function NavBarMain({ loggedInUser, setCurrentLoggedInUser }) {
     setCurrentLoggedInUser("");
   };
 
-   return loggedInUser ? (
-     <>
-       <div className="navi container-fluid">
-         <p>Welcome {loggedInUser.username}</p>
-       </div>
-       <nav className="navi container-fluid" >
+   return(
+       <nav className="navi-m-bar container-fluid" >
+          <div className="navi-m-bar-mini">
+            <img src="../../logo.png" className="main-logo-size" alt="high noon logo" />
+            <span className="main-logo-text-size">
+              High Noon
+           </span>
+           </div>
            <div>
              <NavLink exact to="/">
-               <button onClick={logoutUser}>Logout</button>
+               <button onClick={logoutUser}><span className="main-logo-text-size">
+               Logout
+           </span></button>
              </NavLink>
            </div>
-        
            <div>
              <NavLink activeStyle={{ color: "red" }} exact to="/home">
-               HomePage
+             <span className="main-logo-text-size">
+              Home
+           </span>
              </NavLink>
            </div>
            <div>
              <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
-               Tasks
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
-               Tasks Stats
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
-               Add Tasks
+             <span className="main-logo-text-size">
+              Tasks
+           </span>
              </NavLink>
            </div>
            <div>
              <NavLink activeStyle={{ color: "red" }} exact to="/skills">
-               Skills
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/skills/graphs">
-               Skills Stats
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/skills/add">
-               Add Skills
+             <span className="main-logo-text-size">
+              Skills
+           </span>
              </NavLink>
            </div>
            <div>
              <NavLink activeStyle={{ color: "red" }} to="/user">
-               User Details
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/user/stats">
-               User Stats
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/affirmations">
-               Affirmations
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/zen">
-               Zen
-             </NavLink>
-           </div>
-           <div>
-             <NavLink activeStyle={{ color: "red" }} to="/contacts">
-             Meet the Team
+             <span className="main-logo-text-size">
+              User
+           </span>
              </NavLink>
            </div>
        </nav>
-     </>
-   ) : (
-     <nav>
-       <ul>
-         <li>
-           <NavLink activeStyle={{ color: "red" }} exact to="/">
-             Landing Page
-           </NavLink>
-         </li>
-         <li>
-           <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
-             Tasks
-           </NavLink>
-         </li>
-         <li>
-           <NavLink activeStyle={{ color: "red" }} to="/signup">
-             Signup
-           </NavLink>
-         </li>
-         <li>
-           <NavLink activeStyle={{ color: "red" }} to="/login">
-             Login
-           </NavLink>
-         </li>
-        {/* GOOGLE_LOGIN */}
-         <li>
-          <NavLink activeStyle={{ color: "red" }} exact to="/login-google">
-            Login With Google
-          </NavLink>
-        </li>
-        <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/resources">
-            Resources
-          </NavLink>
-        </li>
-      </ul>
-    </nav> 
-   );
+   )
 
  
 

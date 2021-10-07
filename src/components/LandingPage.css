@@ -32,7 +32,7 @@
 }
 
 
-.button-l:hover, button:focus {
+.button-l:hover, .button-l:focus {
   border-color: var(--hover);
   color: #fff;
 }
@@ -41,7 +41,7 @@
 
 .button-l {
   background: #492258;
-  border: 3px solid;
+  border: 1px solid;
   border-radius: 15px;
   font: inherit;
   line-height: 1;
@@ -50,7 +50,7 @@
 }
 
 .h-l {
-  font-weight: 400;
+  font-weight: 40px;
 }
 
 .code-l {
