@@ -36,6 +36,12 @@ import Footer from "./Navbars/Footer";
     }
   };
 
+  const changeSignupUsername = (e) => {
+    e.cancelBubble = true;
+    e.stopPropagation();
+    setUsername(e.target.value);
+  }
+
   
   const handleFormSubmitLogin = async (e) => {
     e.preventDefault();
@@ -81,7 +87,7 @@ import Footer from "./Navbars/Footer";
                   <label for="tab-2" className="tab">Sign Up</label>
                       <div className="login-space">
                           <div className="login">
-                          <form onSubtmit={handleFormSubmitLogin}>
+                          <form onSubmit={handleFormSubmitLogin}>
                               <div className="group"> 
                       
                                 <label for="user" className="label">Username</label> 
@@ -89,7 +95,7 @@ import Footer from "./Navbars/Footer";
                                 id="user" 
                                 type="text" 
                                 className="input" 
-                                onChange={(e) => setUsernameLogin(e.target.value)}
+                                onChange={changeSignupUsername}
                                 value={usernameLogin}
                                 /> 
                               </div>

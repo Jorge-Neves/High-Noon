@@ -3,6 +3,8 @@ import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./SkillsGraphs.css"
+import Footer from "../Navbars/Footer";
+import NavBarSkills from "../Navbars/NavBarSkills";
 
 function SkillGraphs() {
   const [skillNames, setSkillNames] = useState([]);
@@ -42,7 +44,10 @@ function SkillGraphs() {
   };
 
   return (
-    <div className="skills-graphs-bg">
+    <div className="skill-list-bg row-vertical-skills ">
+      <div>
+        <NavBarSkills />
+      </div>
       <div className="row">
         <div className="header">
           <h1 className="title">Doughnut Chart</h1>
@@ -52,6 +57,9 @@ function SkillGraphs() {
         <div>
           <Doughnut data={data} />
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitsAdd.css"
+import Footer from "../Navbars/Footer";
+import NavBarHabits from "../Navbars/NavBarHabits";
 
 function AddHabit() {
   const loggedInUser = useContext(LoggedUserConsumer);
