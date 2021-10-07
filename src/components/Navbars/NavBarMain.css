@@ -1,4 +1,4 @@
-.navi-bar{
+.navi-m-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -13,11 +13,11 @@
     color: #fff;
   }
   
-  .navi-bar:hover {
+  .navi-m-bar:hover {
     background-color: #10141b;
   }
   
-  .navi-bar a {
+  .navi-m-bar a {
     text-decoration: none;
     cursor: pointer;
     padding: 10px 20px;
@@ -26,7 +26,7 @@
     font-weight: 600;
   }
   
-  .navi-bar button {
+  .navi-m-bar button {
     background-color: transparent;
     border: none;
     color: #fff;

@@ -7,7 +7,7 @@ function NavBarLanding() {
 
    return(
    
-       <nav className="navi-bar" >
+       <nav className="navi-l-bar" >
        <div>
        <NavLink activeStyle={{ color: "red" }} to="/signup">
              Enter

@@ -13,10 +13,10 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
 
    return (
      <>
-       <div className="navi container-fluid">
+       <div className="navi-h-bar container-fluid">
          <p>Welcome {loggedInUser.username}</p>
        </div>
-       <nav className="navi container-fluid" >
+       <nav className="navi-h-bar container-fluid" >
            <div>
              <NavLink exact to="/">
                <button onClick={logoutUser}>Logout</button>
