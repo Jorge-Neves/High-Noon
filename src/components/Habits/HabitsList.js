@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitsList.css"
+import NavBarHabits from "../Navbars/NavBarHabits";
+import Footer from "../Navbars/Footer";
 
 function HabitList() {
   const [habits, setHabits] = useState([]);
@@ -19,7 +21,10 @@ function HabitList() {
   }, []);
 
   return (
-    <div className="habits-list-bg">
+    <div className="habits-list-bg row-vertical-habits">
+      <div>
+        <NavBarHabits />
+      </div>
       <div className="row">
         <ul>
           {habits.map((task) => {
@@ -31,8 +36,12 @@ function HabitList() {
           })}
         </ul>
       </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
+
 
 export default HabitList;

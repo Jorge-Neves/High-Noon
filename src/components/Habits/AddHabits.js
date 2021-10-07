@@ -28,7 +28,10 @@ function AddHabit() {
   };
 
   return (
-    <div className="habits-add-bg">
+    <div className="habits-add-bg row-vertical-habits">
+      <div>
+        <NavBarHabits />
+      </div>
       <div className="row">
         <h2>Add Habit</h2>
         <form onSubmit={handleFormSubmit}>
@@ -41,6 +44,9 @@ function AddHabit() {
 
           <button type="submit">Create</button>
         </form>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

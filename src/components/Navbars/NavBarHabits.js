@@ -35,7 +35,7 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
   </div>
   <div>
        <NavLink activeStyle={{ color: "red" }} exact to="/habits/graphs">
-       <span className="habitss-logo-text-size">
+       <span className="habits-logo-text-size">
           Habit Stats
        </span>
       </NavLink>

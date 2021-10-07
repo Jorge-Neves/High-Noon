@@ -3,6 +3,9 @@ import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitGraphs.css";
+import NavBarHabits from "../Navbars/NavBarHabits";
+import Footer from "../Navbars/Footer";
+
 
 function HabitGraphs() {
   const [habitDatesUser, setHabitDatesUser] = useState([]);
@@ -34,7 +37,10 @@ function HabitGraphs() {
   }, []);
 
   return (
-    <div className="habits-graphs-bg">
+    <div className="habits-graphs-bg row-vertical-habits">
+        <div>
+        <NavBarHabits />
+      </div>
       <div className="row">
         <h2>habits Dates User : {habitDatesUser}</h2>
         <h2>Habit Streak : {HabitStreak}</h2>
@@ -42,6 +48,9 @@ function HabitGraphs() {
         <h2>Dates Missed User : {missDatesUser}</h2>
         <h2>Dates Missed Calc{missDatesCalcs}</h2>
         <h2>Times missed Streak {missStreak}</h2>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
