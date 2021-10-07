@@ -4,6 +4,8 @@ import { useHistory, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./SkillsDetails.css";
+import Footer from "../Navbars/Footer";
+import NavBarSkills from "../Navbars/NavBarSkills";
 
 function SkillDetails({ match }) {
   const [skills, setSkills] = useState({});
@@ -26,13 +28,19 @@ function SkillDetails({ match }) {
   };
 
   return (
-    <div className="skills-details-bg">
+    <div className="skill-list-bg row-vertical-skills ">
+      <div>
+        <NavBarSkills />
+      </div>
       <div className="row">
         <h2>{skills.name}</h2>
         <h3>{skills.timeSpent}</h3>
 
         <NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink>
         <button onClick={() => handleDeleteProject(skills._id)}>Delete</button>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

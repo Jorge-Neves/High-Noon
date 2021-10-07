@@ -13,7 +13,7 @@ function TaskGraphs() {
   useEffect(() => {
     async function getUserTaskNames() {
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs/names`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/graphs`,
         { withCredentials: true }
       );
       const names = response.data;
@@ -55,7 +55,7 @@ function TaskGraphs() {
   };
 
   return (
-    <div className="task-list-bg row-vertical-tasks">
+    <div className="row-vertical-tasks">
             <div>
               <NavBarTasks />
             </div>

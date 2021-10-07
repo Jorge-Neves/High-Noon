@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./SkillsAdd.css"
+import Footer from "../Navbars/Footer";
+import NavBarSkills from "../Navbars/NavBarSkills";
 
 function AddSkill() {
   const loggedInUser = useContext(LoggedUserConsumer);
@@ -26,7 +28,10 @@ function AddSkill() {
   };
 
   return (
-    <div className="skills-add-bg">
+    <div className="skill-list-bg row-vertical-skills ">
+    <div>
+      <NavBarSkills />
+    </div>
       <div className="row">
         <h2>Add Skill</h2>
         <form onSubmit={handleFormSubmit}>
@@ -39,6 +44,9 @@ function AddSkill() {
 
           <button type="submit">Create</button>
         </form>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

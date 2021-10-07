@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./SkillsList.css";
+import Footer from "../Navbars/Footer";
+import NavBarSkills from "../Navbars/NavBarSkills";
 
 function SkillsList() {
   const [skills, setSkills] = useState([]);
@@ -19,7 +21,10 @@ function SkillsList() {
   }, []);
 
   return (
-    <div className="skill-list-bg">
+    <div className="skill-list-bg row-vertical-skills ">
+      <div>
+        <NavBarSkills />
+      </div>
       <div className="row">
         <ul>
           {skills.map((skill) => {
@@ -30,6 +35,9 @@ function SkillsList() {
             );
           })}
         </ul>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

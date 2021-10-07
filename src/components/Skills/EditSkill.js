@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./SkillsEdit.css";
+import Footer from "../Navbars/Footer";
+import NavBarSkills from "../Navbars/NavBarSkills";
 
 function EditSkill({ match }) {
   const [name, setName] = useState("");
@@ -39,7 +41,10 @@ function EditSkill({ match }) {
   };
 
   return (
-    <div className="skill-edit-bg">
+    <div className="skill-list-bg row-vertical-skills ">
+    <div>
+      <NavBarSkills />
+    </div>
       <div className="row">
         <h2>Edit Skill</h2>
         <form onSubmit={handleFormSubmit}>
@@ -59,6 +64,9 @@ function EditSkill({ match }) {
 
           <button type="submit">Update</button>
         </form>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
