@@ -7,7 +7,7 @@ function NavBarTasks() {
    return (
     <nav className="navi-t-bar" >
     <div className="navi-t-bar-mini">
-    <NavLink to ="/">
+    <NavLink to ="/home">
             <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
             <span className="landing-logo-text-size">
               High Noon

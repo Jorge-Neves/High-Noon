@@ -42,7 +42,7 @@ function Login({ setCurrentLoggedInUser }) {
     } catch (e) {
       toast.error("Invalid login" , {
         position: "top-right",
-        autoClose: 900,
+        autoClose: 800,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -54,12 +54,12 @@ function Login({ setCurrentLoggedInUser }) {
 
   return (
     <div className="signup-bg row-vertical-signup ">
-      <div>
-        <NavBarLanding />
-      </div>
-      <div>
+    <div>
+      <NavBarLanding />
+    </div>
+    <div className="signup-box">
       <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
+      <form className="signup-form" onSubmit={handleFormSubmit}>
         <label>Username</label>
         <input
           type="text"
@@ -74,14 +74,24 @@ function Login({ setCurrentLoggedInUser }) {
           value={password}
         />
 
-        <button className="close-l button-l" type="submit">Login</button>
+        <button className="close-l button-l button-size1" type="submit">
+          Login
+        </button>
       </form>
-      Don't have an account? Register <NavLink to="/signup"><button className="close-l button-l" type="submit">Here</button></NavLink>
-    </div>
-    <div>
-        <Footer />
+      <div className="already-button">
+        Do not have  an account? Register{" "}
+        <NavLink to="/signup">
+          <button className="close-l button-l button-size2-login" type="submit">
+            Here
+          </button>
+        </NavLink>
       </div>
     </div>
+    <div>
+      <Footer />
+    </div>
+  </div>
+    
   );
 }
 

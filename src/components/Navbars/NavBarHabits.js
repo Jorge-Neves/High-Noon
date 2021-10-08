@@ -14,7 +14,7 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
    return (
     <nav className="navi-h-bar" >
     <div className="navi-h-bar-mini">
-    <NavLink to ="/">
+    <NavLink to ="/home">
             <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
             <span className="landing-logo-text-size">
               High Noon

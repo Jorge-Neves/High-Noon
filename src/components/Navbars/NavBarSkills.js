@@ -8,7 +8,7 @@ function NavBarSkills() {
    return (
     <nav className="navi-s-bar" >
     <div className="navi-s-bar-mini">
-    <NavLink to ="/">
+    <NavLink to ="/home">
             <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
             <span className="landing-logo-text-size">
               High Noon
