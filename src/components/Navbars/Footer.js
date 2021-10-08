@@ -8,7 +8,7 @@ function Footer() {
    return (  
        <nav className="footer-bar container-fluid" >
            <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/contacts">
+             <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/contacts">
              <span className="footer-logo-text-size">
              Contact Us
            </span>

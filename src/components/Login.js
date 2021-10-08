@@ -79,12 +79,9 @@ function Login({ setCurrentLoggedInUser }) {
         </button>
       </form>
       <div className="already-button">
-        Do not have  an account? Register{" "}
-        <NavLink to="/signup">
-          <button className="close-l button-l button-size2-login" type="submit">
-            Here
-          </button>
-        </NavLink>
+        Do not have  an account? <NavLink to="/signup"> Register{" "}</NavLink>
+        
+    
       </div>
     </div>
     <div>

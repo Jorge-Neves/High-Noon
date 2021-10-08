@@ -40,19 +40,24 @@ function AddSkill() {
     <div>
       <NavBarSkills />
     </div>
-      <div className="row">
-        <h2>Add Skill</h2>
-        <form onSubmit={handleFormSubmit}>
-          <label>Name</label>
+      
+      <div className="signup-box">
+      <h2>Add Skill</h2>
+      <form className="signup-form" onSubmit={handleFormSubmit}>
+      <label>Name</label>
           <input
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
 
-          <button type="submit">Create</button>
-        </form>
-      </div>
+        <button className="close-l button-l button-size1" type="submit">
+          Create
+        </button>
+      </form>
+     
+    </div>
+      
       <div>
         <Footer />
       </div>

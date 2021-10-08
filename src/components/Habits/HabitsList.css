@@ -11,3 +11,11 @@
     justify-content: space-between;
     text-align: center;
 } 
+
+.habit-text-link{
+    color: white
+}
+
+.habit-text-link:hover{
+    color: rgb(32, 20, 3)
+}

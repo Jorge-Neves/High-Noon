@@ -2,6 +2,11 @@
   background-color: #000;
 }
 
+.contacts-margins{
+  margin-top: 10%;
+  margin-left: 38%;
+}
+
 .row-vertical-contacts {
   display: flex;
   flex-direction: column;

@@ -40,21 +40,22 @@ function AddTask() {
     <div>
       <NavBarTasks />
     </div>
-      <div className="row">
-        <div className="col-md-6 mx-auto p-0">
-          <h2 className="add-task-text">Add Task</h2>
-          <form onSubmit={handleFormSubmit}>
-            <label className="add-task-text">Name</label>
-            <input
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-            />
+      <div className="signup-box">
+      <h2>Add Task</h2>
+      <form className="signup-form" onSubmit={handleFormSubmit}>
+      <label>Name</label>
+          <input
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
 
-            <button type="submit">Create</button>
-          </form>
-        </div>
-      </div>
+        <button className="close-l button-l button-size1" type="submit">
+          Create
+        </button>
+      </form>
+     
+    </div>
       <div>
               <Footer />
             </div>

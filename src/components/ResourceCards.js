@@ -7,12 +7,15 @@ import NavBarLanding from "./Navbars/NavBarLanding";
 function ResourceCard() {
   
   return (
-  <>
+  <div>
   <div className="container-fluid">
     <NavBarLanding />
   </div>
+  <div>
+    <img src="/ContactsHeader.png" alt="people talking" />
+    </div>
  
-  <div className="container-fluid resources-bg" >
+  <div className="container-fluid" >
   <div className="container">
     <div className="card">
       <div className="face face1">
@@ -51,7 +54,7 @@ function ResourceCard() {
     <div className="card">
       <div className="face face1">
         <div className="content">
-          <img src="/public/spada_logo_normal.png" />
+          <img src="/spada_logo_normal.png" />
           <h3>Portuguese ADHD association</h3>
         </div>
       </div>
@@ -66,7 +69,10 @@ function ResourceCard() {
     </div>
 </div>
   </div>
-  </>
+  <div>
+    <img src="/ContactsFooter.jpg" alt="people talking" />
+    </div>
+  </div>
   )
 }
 

@@ -87,8 +87,9 @@ function App() {
         <Route exact path="/resources" component={ResourceCard} /> 
         <Route exact path="/tasks/add" component={AddTask} />
         <Route exact path="/tasks/graphs" component={TaskGraphs} />
-        <Route exact path="/tasks/:id" component={TaskDetails} />
         <Route exact path="/tasks/:id/edit" component={EditTask} />
+        <Route exact path="/tasks/:id" component={TaskDetails} />
+       
         <Route exact path="/skills" component={SkillsList} />
         <Route exact path="/skills/add" component={AddSkill} />
         <Route exact path="/skills/graphs" component={SkillGraphs} />
@@ -104,10 +105,14 @@ function App() {
         <Route exact path="/greg" component={Greg} />
         <Route exact path="/paulo" component={Paulo} />
         <Route exact path="/habits" component={HabitList} />
-        <Route exact path="/habit/graphs" component={HabitGraphs} />
-        <Route exact path="/habit/:id" component={HabitDetails} />
-        <Route exact path="/habits/:id/edit" component={EditHabits} />
+        
         <Route exact path="/habits/add" component={AddHabits} />
+        <Route exact path="/habits/:id/graphs" component={HabitGraphs} />
+        <Route exact path="/habits/:id/edit" component={EditHabits} />
+        <Route exact path="/habits/:id" component={HabitDetails} />
+    
+        
+       
         {/* GOOGLE_LOGIN */}
         <Route exact path="/login-google" render={
             () => {

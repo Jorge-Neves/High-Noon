@@ -32,7 +32,7 @@ function SkillDetails({ match }) {
       draggable: true,
       progress: undefined,
   });
-    history.push("/");
+    history.push("/skills");
   };
 
   return (
@@ -41,11 +41,18 @@ function SkillDetails({ match }) {
         <NavBarSkills />
       </div>
       <div className="row">
-        <h2>{skills.name}</h2>
-        <h3>{skills.timeSpent} Pomodoros</h3>
-
-        <NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink>
-        <button onClick={() => handleDeleteProject(skills._id)}>Delete</button>
+        <h2 className="details-task-text">{skills.name}</h2>
+        <h3 className="details-task-text">{skills.timeSpent} Pomodoros</h3>
+        <div className="row-horizontal-habits-buttons">
+              <div>
+                <button className="close-l button-l button-size1" ><NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink></button>
+              </div>
+              <div>
+              <button  className="close-l button-l button-size1" onClick={() => handleDeleteProject(skills._id)}>Delete</button>
+              </div>
+        </div>
+        
+        
       </div>
       <div>
         <Footer />

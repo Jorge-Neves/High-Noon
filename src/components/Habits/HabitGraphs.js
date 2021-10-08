@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Doughnut } from "react-chartjs-2";
+
 import axios from "axios";
 import { LoggedUserConsumer } from "../../context/loggedUser";
 import "./HabitGraphs.css";
@@ -7,47 +7,44 @@ import NavBarHabits from "../Navbars/NavBarHabits";
 import Footer from "../Navbars/Footer";
 
 
-function HabitGraphs() {
-  const [habitDatesUser, setHabitDatesUser] = useState([]);
-  const [HabitStreak, setHabitStreak] = useState([]);
-  const [habitDatesCalcs, setHabitDatesCalcs] = useState([]);
-  const [missDatesUser, setMissDatesUser] = useState([]);
-  const [missStreak, setMissStreak] = useState([]);
-  const [missDatesCalcs, setMissDatesCalcs] = useState([]);
+function HabitGraphs({match}) {
+  const [habits, setHabits] = useState([]);
+  const [times, setTimes] = useState(0);
+  const [names, setNames] = useState("");
+  
 
   useEffect(() => {
-    async function getUserHabitData() {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/h/success`,
-        { withCredentials: true }
-      );
-      const apiResponse = response.data;
-
-      setHabitDatesUser(apiResponse.successArrayStrings);
-      setMissDatesCalcs(apiResponse.missArrayIntegers);
-
-      setHabitStreak(apiResponse.successCount);
-
-      setMissDatesUser(apiResponse.missArrayStrings);
-      setMissDatesCalcs(apiResponse.missArrayIntegers);
-
-      setMissStreak(apiResponse.missCount);
+    async function getHabitDetails() {
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${match.params.id}`);
+      setHabits(response.data);
+      console.log(response.data)
+      setTimes(response.data.date.length)
+      setNames(response.data.name)
     }
-    getUserHabitData();
+    getHabitDetails();
   }, []);
-
   return (
     <div className="habits-graphs-bg row-vertical-habits">
         <div>
         <NavBarHabits />
       </div>
+      <div>
+        <h1 className="habit-text habit-result-top-margin" >You accomplished your habit "{names}" {times} times </h1>
+      </div>
+      <div>
+        <h1 className="habit-text">The dates you accomplished your habit this month (dd-mm-yy)</h1>
+      </div>
       <div className="row">
-        <h2>habits Dates User : {habitDatesUser}</h2>
-        <h2>Habit Streak : {HabitStreak}</h2>
-        <h2>Habits Dates Calc: {habitDatesCalcs}</h2>
-        <h2>Dates Missed User : {missDatesUser}</h2>
-        <h2>Dates Missed Calc{missDatesCalcs}</h2>
-        <h2>Times missed Streak {missStreak}</h2>
+      <ul>
+          {habits.date && habits.date.map((e, i) => {
+            return (
+              <li key={i}>
+              <h5 className="habit-text">{e}</h5>
+              </li>
+              );
+          })}
+          
+        </ul>
       </div>
       <div>
         <Footer />

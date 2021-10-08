@@ -25,35 +25,19 @@ function TaskList() {
             <div>
               <NavBarTasks />
             </div>
-            <div className="row">
-                <div className="col-md-6 mx-auto p-0">
-                    
-    <div className="container">
-      {tasks.map((task) => {
+            <div className="row-tasks-margin">
+                 {tasks.map((task) => {
         return (
-          <div className="card row-horizontal-tasks">
-      <div className="face face1">
-        <div className="content">
-          <img src="/reddit.png" />
-          <NavLink to={`/tasks/${task._id}`}><h3>{task.name}</h3></NavLink>
-        </div>
-      </div>
-      <div className="face face2">
-        <div className="content">
-          <p>
-            {task.timeSpent}
-          </p>
-        </div>
-      </div>
-    </div>
-        );
-      })}
-    </div>
-                </div>
-            </div>
+          <div>
+          <NavLink to={`/tasks/${task._id}`}><h3>{task.name}{task.timeSpent}</h3></NavLink>
+          </div>
+            );
+             })}
+             </div>
             <div>
               <Footer />
             </div>
+        
         </div>
 
 

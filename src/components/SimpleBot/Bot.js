@@ -112,7 +112,7 @@ function Bot(){
     },
     {
       id: '12',
-      message: '~ Will you stay a little while longer? ~',
+      message: '- Will you stay a little while longer?-',
       trigger: '12u',
       
     },
@@ -139,7 +139,7 @@ function Bot(){
     {
       id: '14check',
       delay: random,
-      message: '~ are you there? Did you maintain focus? ~',
+      message: '- are you there? Did you maintain focus? -',
       trigger: '14checkPromptu',
     },
     {
@@ -164,7 +164,7 @@ function Bot(){
     },
     {
       id: '15',
-      message: '~ Shall we take a break before continuing. or Do you wish to continue on another occasion?~',
+      message: '- Shall we take a break before continuing. or Do you wish to continue on another occasion?-',
       trigger: '15u'
     },
     {
@@ -182,7 +182,7 @@ function Bot(){
     },
     {
       id: '16',
-      message: '~ Did you enjoy your 5 min break? Shall we start another Pomodoro? ~',
+      message: '- Did you enjoy your 5 min break? Shall we start another Pomodoro? -',
       trigger: '16u',
     },
     {

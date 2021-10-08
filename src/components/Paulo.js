@@ -7,6 +7,9 @@ function Paulo() {
     <div>
     <NavBarLanding />
     </div>
+    <div>
+    <img src="/ContactsHeader.png" alt="people talking" />
+    </div>
       <div class="container-personal">
         <div class="card-wrapper-personal">
           <div class="card-personal">
@@ -37,7 +40,7 @@ function Paulo() {
         </div>
       </div>
       <div>
-    <img src="/ContactsHeader" alt="people talking" />
+    <img src="/ContactsFooter.jpg" alt="people talking" />
     </div>
     </div>
   );

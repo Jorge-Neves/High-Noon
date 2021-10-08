@@ -18,20 +18,10 @@ function AddHabit() {
 
     const body = {
       name,
-      timeSpent: 1,
-      user: loggedInUser,
     };
 
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits`, body);
-    toast.success("Habit created" , {
-      position: "top-right",
-      autoClose: 900,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-  });
+    toast.success("Habit created");
     history.push("/habits");
   };
 
@@ -40,19 +30,23 @@ function AddHabit() {
       <div>
         <NavBarHabits />
       </div>
-      <div className="row">
-        <h2>Add Habit</h2>
-        <form onSubmit={handleFormSubmit}>
-          <label>Name</label>
+    
+      <div className="signup-box">
+      <h2>Add Habit</h2>
+      <form className="signup-form" onSubmit={handleFormSubmit}>
+      <label><h4>Name</h4></label>
           <input
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
 
-          <button type="submit">Create</button>
-        </form>
-      </div>
+        <button className="close-l button-l button-size1" type="submit">
+          Create
+        </button>
+      </form>
+     
+    </div>
       <div>
         <Footer />
       </div>

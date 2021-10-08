@@ -48,13 +48,21 @@ function TaskGraphs() {
             <div>
               <NavBarTasks />
             </div>
+            <div className="tasks-top-h1-margin">
+              <h1> Tasks Doughnut Graph </h1>
+            </div>
             <div>
                  <img src="/GraphsHeader.jpg" alt="people talking" />
             </div>
           <div>
             <Doughnut data={data} />
           </div>
-        
+          <div className="tasks-top-h1-margin">
+              <h1> Keep up the good work! </h1>
+            </div>
+            <div>
+              <Footer />
+            </div>
       
     </div>
   );

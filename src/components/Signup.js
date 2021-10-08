@@ -80,12 +80,8 @@ function Signup({ setCurrentLoggedInUser }) {
             </button>
           </form>
           <div className="already-button">
-            Already an account? Login{" "}
-            <NavLink to="/login">
-              <button className="close-l button-l button-size2" type="submit">
-                Here
-              </button>
-            </NavLink>
+            Already an account?<NavLink to="/login"> Login{" "}</NavLink>
+            
           </div>
         </div>
         <div>

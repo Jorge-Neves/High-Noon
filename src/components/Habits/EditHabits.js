@@ -14,12 +14,11 @@ function EditHabit({ match }) {
 
   useEffect(() => {
     async function getHabit() {
-      const task = await axios.get(
+      const response = await axios.get(
         `${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${match.params.id}`
       );
 
-      setHabit(habit.data.name);
-      setTimeSpent(task.data.timeSpent);
+      setHabit(response.data);
     }
     getHabit();
   }, []);
@@ -28,7 +27,6 @@ function EditHabit({ match }) {
     e.preventDefault();
     const body = {
       habit,
-      timeSpent,
     };
 
     await axios.put(
@@ -53,26 +51,23 @@ function EditHabit({ match }) {
         <div>
         <NavBarHabits />
       </div>
-      <div className="row">
-        <h2>Edit Habit</h2>
-        <form onSubmit={handleFormSubmit}>
-          <label>Name</label>
-          <input
-            type="text"
-            onChange={(e) => setHabit(e.target.value)}
-            value={habit}
-          />
+    
+      <div className="signup-box">
+            <h2>Edit Habit</h2>
+            <form className="signup-form" onSubmit={handleFormSubmit}>
+                  <label>Name</label>
+                <input
+                type="text"
+                onChange={(e) => setHabit(e.target.value)}
+                value={habit.name}
+              />
 
-          <label>Edit dates</label>
-          <input
-            type="number"
-            onChange={(e) => setTimeSpent(e.target.value)}
-            value={timeSpent}
-          />
-
-          <button type="submit">Update</button>
-        </form>
-      </div>
+              <button className="close-l button-l button-size1" type="submit">
+                Update
+              </button>
+            </form>
+     
+    </div>
       <div>
         <Footer />
       </div>

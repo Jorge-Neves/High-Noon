@@ -22,28 +22,28 @@ function NavBarHabits({ loggedInUser, setCurrentLoggedInUser }) {
            </NavLink>
     </div>
    <div>
-   <NavLink activeStyle={{ color: "red" }} to="/home">
+   <NavLink activeStyle={{ color: "#f7c579" }} to="/home">
    <span className="habits-logo-text-size">
           Home
        </span>
        </NavLink>
    </div>
    <div>
-       <NavLink activeStyle={{ color: "red" }} exact to="/habits">
+       <NavLink activeStyle={{ color: "#f7c579" }} exact to="/habits">
        <span className="habits-logo-text-size">
           Habits
        </span>
       </NavLink>
   </div>
   <div>
-       <NavLink activeStyle={{ color: "red" }} exact to="/habits/graphs">
+       <NavLink activeStyle={{ color: "#f7c579" }} exact to="/habits/:id/graphs">
        <span className="habits-logo-text-size">
           Habit Stats
        </span>
       </NavLink>
   </div>
   <div>
-       <NavLink activeStyle={{ color: "red" }} exact to="/habits/add">
+       <NavLink activeStyle={{ color: "#f7c579" }} exact to="/habits/add">
        <span className="habits-logo-text-size">
           Add Habit
        </span>

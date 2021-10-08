@@ -11,9 +11,9 @@ return(
     <NavBarLanding />
     </div>
     <div>
-    <img src="/ContactsHeader" alt="people talking" />
+    <img src="/ContactsHeader.png" alt="people talking" />
     </div>
-    <div className="contacts">
+    <div className="contacts contacts-margins">
     <article className="flow">
   <div className="team">
   <ul className="auto-grid" role="list">
@@ -38,7 +38,7 @@ return(
       </article>
       </div>
       <div>
-    <img src="/ContactsHeader" alt="people talking" />
+    <img src="/ContactsFooter.jpg" alt="people talking" />
     </div>
 </div>
 )

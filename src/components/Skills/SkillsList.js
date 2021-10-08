@@ -25,12 +25,12 @@ function SkillsList() {
       <div>
         <NavBarSkills />
       </div>
-      <div className="row">
+      <div className="row-tasks-margin">
         <ul>
           {skills.map((skill) => {
             return (
               <li key={skill._id}>
-                <NavLink to={`/skills/${skill._id}`}>{skill.name}</NavLink>
+                <NavLink to={`/skills/${skill._id}`}><h3>{skill.name}</h3></NavLink>
               </li>
             );
           })}

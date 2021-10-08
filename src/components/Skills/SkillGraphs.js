@@ -48,6 +48,9 @@ function SkillGraphs() {
       <div>
         <NavBarSkills />
       </div>
+        <div className="skills-top-h1-margin">
+           <h1> Skills Doughnut Graph </h1>
+        </div>
             <div>
                  <img src="/GraphsHeader.jpg" alt="people talking" />
             </div>
@@ -55,8 +58,13 @@ function SkillGraphs() {
         <div>
           <Doughnut data={data} />
         </div>
-      
-     
+        
+        <div className="skills-top-h1-margin">
+          <h1> Keep up the good work! </h1>
+        </div>
+        <div>
+          <Footer />
+        </div>
     </div>
   );
 }

@@ -24,22 +24,22 @@ function NavBarContacts({ loggedInUser, setCurrentLoggedInUser }) {
            </div>
         
            <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/contacts">
+             <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/contacts">
                HomePage
              </NavLink>
            </div>
            <div>
-             <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
+             <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/tasks">
                Tasks
              </NavLink>
            </div>
            <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/graphs">
+             <NavLink activeStyle={{ color: "#ff9ea9" }} to="/tasks/graphs">
                Tasks Stats
              </NavLink>
            </div>
            <div>
-             <NavLink activeStyle={{ color: "red" }} to="/tasks/add">
+             <NavLink activeStyle={{ color: "#ff9ea9" }} to="/tasks/add">
                Add Tasks
              </NavLink>
            </div>

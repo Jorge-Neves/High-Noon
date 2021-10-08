@@ -18,23 +18,23 @@ function NavBarMain({ loggedInUser, setCurrentLoggedInUser }) {
       </div>
 
       <div>
-        <NavLink activeStyle={{ color: "red" }} exact to="/home">
+        <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/home">
           <span className="main-logo-text-size">Home</span>
         </NavLink>
       </div>
       <div>
-        <NavLink activeStyle={{ color: "red" }} exact to="/tasks">
+        <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/tasks">
           <span className="main-logo-text-size">Tasks</span>
         </NavLink>
       </div>
       <div>
-        <NavLink activeStyle={{ color: "red" }} exact to="/skills">
+        <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/skills">
           <span className="main-logo-text-size">Skills</span>
         </NavLink>
       </div>
       <div>
-        <NavLink activeStyle={{ color: "red" }} to="/user">
-          <span className="main-logo-text-size">User</span>
+        <NavLink activeStyle={{ color: "#ff9ea9" }} exact to="/habits">
+          <span className="main-logo-text-size">Habits</span>
         </NavLink>
       </div>
     </nav>

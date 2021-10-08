@@ -30,7 +30,7 @@ function HabitsList() {
           {habits.map((habit) => {
             return (
               <li key={habit._id}>
-                <NavLink to={`/habits/${habit._id}`}>{habit.name}</NavLink>
+                <NavLink to={`/habits/${habit._id}`}><h1 className="habit-text-link">{habit.name}</h1></NavLink>
               </li>
             );
           })}

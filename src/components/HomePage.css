@@ -6,6 +6,11 @@
     background-size: 100% 100%;
 }
 
+.row-home-logged-margin{
+  padding-bottom: 20%;
+  color: white;
+}
+
 .row-vertical-home {
     display: flex;
     flex-direction: column;
@@ -52,7 +57,9 @@
 .h-m {
   font-weight: 40px;
 }
-
+.row-home-freya{
+  marging-bottom: 0;
+}
 .code-m {
   color: #e4cb58;
   font: inherit;

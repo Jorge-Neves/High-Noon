@@ -53,28 +53,29 @@ function EditTask({ match }) {
     <div>
       <NavBarTasks />
     </div>
-      <div className="row">
-        <div className="col-md-6 mx-auto p-0">
-          <h2 className="edit-task-text">Edit Task</h2>
-          <form onSubmit={handleFormSubmit}>
-            <label className="edit-task-text">Name</label>
-            <input
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-            />
+     
+      <div className="signup-box">
+            <h2>Edit Task</h2>
+            <form className="signup-form" onSubmit={handleFormSubmit}>
+                  <label>Name</label>
+                <input
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+                <label>Time Spent</label>
+                <input
+                 type="number"
+               onChange={(e) => setTimeSpent(e.target.value)}
+               value={timeSpent}
+              />
 
-            <label className="edit-task-text">Time Spent</label>
-            <input
-              type="number"
-              onChange={(e) => setTimeSpent(e.target.value)}
-              value={timeSpent}
-            />
-
-            <button   type="submit">Update</button>
-          </form>
-        </div>
-      </div>
+              <button className="close-l button-l button-size1" type="submit">
+                Update
+              </button>
+            </form>
+     
+    </div>
       <div>
               <Footer />
             </div>

@@ -32,7 +32,7 @@ function TaskDetails({ match }) {
       draggable: true,
       progress: undefined,
   });
-    history.push("/");
+    history.push("/tasks");
   };
 
   return (
@@ -43,11 +43,18 @@ function TaskDetails({ match }) {
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
           <h2 className="details-task-text">{tasks.name}</h2>
-          <h3 className="details-task-text">{tasks.timeSpent}</h3>
-
-          <NavLink  className="details-task-text" to={`/tasks/${tasks._id}/edit`}>Edit</NavLink>
-          <button onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
+          <h3 className="details-task-text">{tasks.timeSpent} Pomodoros</h3>
+          <div className="row-horizontal-habits-buttons">
+              <div>
+                <button className="close-l button-l button-size1" ><NavLink  className="details-task-text" to={`/tasks/${tasks._id}/edit`}>Edit</NavLink></button>
+              </div>
+              <div>
+              <button className="close-l button-l button-size1" onClick={() => handleDeleteProject(tasks._id)}>Delete</button>
+              </div>
         </div>
+      </div>  
+          
+         
       </div>
        <div>
               <Footer />

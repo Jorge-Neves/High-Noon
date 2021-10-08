@@ -9,7 +9,7 @@ function Greg() {
     <NavBarLanding />
     </div>
     <div>
-    <img src="/ContactsHeader" alt="people talking" />
+    <img src="/ContactsHeader.png" alt="people talking" />
     </div>
       <div className="container-personal">
         <div className="card-wrapper-personal">
@@ -41,7 +41,7 @@ function Greg() {
         </div>
       </div>
       <div>
-    <img src="/ContactsHeader" alt="people talking" />
+    <img src="/ContactsFooter.jpg" alt="people talking" />
     </div>
     </div>
   );
