@@ -23,7 +23,15 @@ function SkillDetails({ match }) {
 
   const handleDeleteProject = async (id) => {
     await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/skills/${id}`);
-    toast.info("Skill deleted");
+    toast.info("Skill deleted" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/");
   };
 

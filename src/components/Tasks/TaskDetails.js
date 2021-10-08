@@ -23,7 +23,15 @@ function TaskDetails({ match }) {
 
   const handleDeleteProject = async (id) => {
     await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/tasks/${id}`);
-    toast.info("task deleted");
+    toast.info("task deleted" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/");
   };
 

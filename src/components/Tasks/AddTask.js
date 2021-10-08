@@ -23,7 +23,15 @@ function AddTask() {
     };
 
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/tasks`, body);
-    toast.success("Task created");
+    toast.success("Task created" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/tasks");
   };
 

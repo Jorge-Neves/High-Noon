@@ -9,15 +9,17 @@ function NavBarLanding() {
    
        <nav className="navi-l-bar" >
         <div className="navi-l-bar-mini">
+        <NavLink to ="/">
             <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
             <span className="landing-logo-text-size">
               High Noon
            </span>
+           </NavLink>
         </div>
        <div>
        <NavLink activeStyle={{ color: "red" }} to="/signup">
        <span className="landing-logo-text-size">
-              Enter
+              SignUp
            </span>
            </NavLink>
        </div>

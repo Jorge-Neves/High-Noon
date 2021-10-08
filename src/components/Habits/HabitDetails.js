@@ -23,7 +23,15 @@ function HabitDetails({ match }) {
 
   const handleDeleteProject = async (id) => {
     await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits/${id}`);
-    toast.info("Habit deleted");
+    toast.info("Habit deleted" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/");
   };
 

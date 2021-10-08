@@ -23,7 +23,15 @@ function AddHabit() {
     };
 
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/habits`, body);
-    toast.success("Habit created");
+    toast.success("Habit created" , {
+      position: "top-right",
+      autoClose: 900,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+  });
     history.push("/habits");
   };
 

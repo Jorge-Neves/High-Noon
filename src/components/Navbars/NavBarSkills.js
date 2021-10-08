@@ -8,10 +8,12 @@ function NavBarSkills() {
    return (
     <nav className="navi-s-bar" >
     <div className="navi-s-bar-mini">
-        <img src="../../logo.png" className="skills-logo-size" alt="high noon logo" />
-        <span className="skills-logo-text-size">
-          High Noon
-       </span>
+    <NavLink to ="/home">
+            <img src="../../logo.png" className="landing-logo-size" alt="high noon logo" />
+            <span className="landing-logo-text-size">
+              High Noon
+           </span>
+           </NavLink>
     </div>
    <div>
    <NavLink activeStyle={{ color: "red" }} to="/home">
