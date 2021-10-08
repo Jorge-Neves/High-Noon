@@ -31,7 +31,7 @@ function TaskList() {
     <div className="container">
       {tasks.map((task) => {
         return (
-          <div className="card">
+          <div className="card row-horizontal-tasks">
       <div className="face face1">
         <div className="content">
           <img src="/reddit.png" />

@@ -44,17 +44,18 @@ function TaskGraphs() {
   };
 
   return (
-    <div className="task-graphs-bg row-vertical-tasks">
+    <div className="row-vertical-tasks">
             <div>
               <NavBarTasks />
+            </div>
+            <div>
+                 <img src="/GraphsHeader.jpg" alt="people talking" />
             </div>
           <div>
             <Doughnut data={data} />
           </div>
         
-      <div>
-              <Footer />
-         </div>
+      
     </div>
   );
 }

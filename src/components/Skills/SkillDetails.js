@@ -34,7 +34,7 @@ function SkillDetails({ match }) {
       </div>
       <div className="row">
         <h2>{skills.name}</h2>
-        <h3>{skills.timeSpent}</h3>
+        <h3>{skills.timeSpent} Pomodoros</h3>
 
         <NavLink to={`/skills/${skills._id}/edit`}>Edit</NavLink>
         <button onClick={() => handleDeleteProject(skills._id)}>Delete</button>

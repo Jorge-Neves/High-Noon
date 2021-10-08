@@ -1,10 +1,12 @@
 import React from "react";
 import "./Contacts.css";
-
+import NavBarLanding from "./Navbars/NavBarLanding";
 function Paulo() {
   return (
-    
-    <>
+    <div className="row-vertical-contacts">
+    <div>
+    <NavBarLanding />
+    </div>
       <div class="container-personal">
         <div class="card-wrapper-personal">
           <div class="card-personal">
@@ -34,7 +36,10 @@ function Paulo() {
           </div>
         </div>
       </div>
-    </>
+      <div>
+    <img src="/ContactsHeader" alt="people talking" />
+    </div>
+    </div>
   );
 }
 export default Paulo;

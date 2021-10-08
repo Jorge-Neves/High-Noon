@@ -2,31 +2,24 @@ import React, { useEffect, useState } from "react";
 import axios from "axios"
 import ChatBot from 'react-simple-chatbot';
 import { LoggedUserConsumer} from "../../context/loggedUser"
-import AffirmationJSON from "../../seeds/Affirmation.json"
+
 
 function Bot(){
 
-  function Affirmations(){
-    const [affirm, setAffirm] = useState(AffirmationJSON);
-    
-    useEffect(() => {
-        async function randomAfirm() {
-            const index = Math.floor(Math.random() * AffirmationJSON.length);
-            const newRandomAffirm = AffirmationJSON[index];
-            
-         
-          setAffirm(newRandomAffirm);
-        };
-          randomAfirm();
 
-    },[])
-
-    return affirm.name
-
-  }
+   
 
   const random = Math.floor((Math.random() * 1000000) + 300000)
   const remainder = 1500000 - random
+  
+
+  function Affirmations(){
+    const affirmationsArray = ["You got this", "You'll figure it out", "You're a smart cookie", "I believe in you", "Struggling is part of learning", "Mistakes don't make you less capable", "We are all works in progress", "You are a capable human", "You know more than you think", "10x engineers are a myth", "If everything was easy you'd be bored", "I admire you for taking this on", "You're resourceful and clever", "You'll find a way"]
+    const randomAffirmation = Math.floor((Math.random() * affirmationsArray.length))
+    const affirmation = affirmationsArray[randomAffirmation]
+    return affirmation
+  }
+
 
   function Greetings(){
   const greetingsArray = ['Hey', 'Is it High Noon yet?', 'Feeling inspired?','Greetings', 'Happy to see you again']
@@ -47,6 +40,11 @@ function Bot(){
         <ChatBot
         speechSynthesis={{ enable: true, lang: 'en' }}
   steps={[
+    {
+      id: '0',
+      message: `User entered the Room...`,
+      trigger: '1',
+    },
     {
       id: '1',
       message: `${Greetings()}`,

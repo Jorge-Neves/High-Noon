@@ -44,23 +44,19 @@ function SkillGraphs() {
   };
 
   return (
-    <div className="skill-list-bg row-vertical-skills ">
+    <div className="row-vertical-skills ">
       <div>
         <NavBarSkills />
       </div>
-      <div className="row">
-        <div className="header">
-          <h1 className="title">Doughnut Chart</h1>
-          <div className="links"></div>
-        </div>
+            <div>
+                 <img src="/GraphsHeader.jpg" alt="people talking" />
+            </div>
 
         <div>
           <Doughnut data={data} />
         </div>
-      </div>
-      <div>
-        <Footer />
-      </div>
+      
+     
     </div>
   );
 }

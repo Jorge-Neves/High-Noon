@@ -13,6 +13,13 @@
   text-align: center;
 }
 
+.row-horizontal-tasks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
 .card {
   width: 500px;
   left: 100px;

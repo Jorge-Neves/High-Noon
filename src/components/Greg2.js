@@ -1,16 +1,9 @@
 import React from "react";
 import "./Contacts.css";
 import "font-awesome/css/font-awesome.min.css";
-import NavBarLanding from "./Navbars/NavBarLanding";
-function Greg() {
+function Greg2() {
   return (    
-    <div className="row-vertical-contacts">
-    <div>
-    <NavBarLanding />
-    </div>
-    <div>
-    <img src="/ContactsHeader" alt="people talking" />
-    </div>
+    </>
       <div className="container-personal">
         <div className="card-wrapper-personal">
           <div className="card-personal">
@@ -40,10 +33,7 @@ function Greg() {
           </div>
         </div>
       </div>
-      <div>
-    <img src="/ContactsHeader" alt="people talking" />
-    </div>
-    </div>
+    </>
   );
 }
-export default Greg;
+export default Greg2;
