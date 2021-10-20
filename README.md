@@ -2,7 +2,7 @@
 High Noon repositotry
 # Quidditch-Manager-Project
 
-<img src=/DocumentationScreenshot.png alt="A bridge barely lit by the moon with a caption that says 'You have been invited to lead your very own distinct quidditch team to victory'" />
+<img src=/Documentation.png alt="LAnding Page for the High Noon Time Tracker web app" />
 Take part in a centuries old wizarding tradition
 
 Accept your invitation
