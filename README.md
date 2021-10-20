@@ -4,6 +4,10 @@
 
 Made by Gregory Marklew and Paulo Santos.
 
+# Front End
+This repository holds all of the code relating to the front end portion of the app. to read about the back end portion access the following link:
+<br>
+https://github.com/Jorge-Neves/High-Noon-API
 
 # Description
 High Noon was the final project of the bootcamp and required us to put into practice all 
