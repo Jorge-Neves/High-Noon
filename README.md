@@ -36,7 +36,7 @@ Apologies this issue will be fixed in a later version.
 
 # Technologies
 Technologies
-React | NodeJS | Axios | Express | JavaScript | Bootstrap | HTML | CSS | Netlify | Heroku
+React | NodeJS | Axios | Express | JavaScript | Bootstrap | HTML | CSS | Netlify | Heroku |
 Chartjs | react-chartjs | react-simple-chatbot | MERN Stack
 
 
