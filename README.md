@@ -25,6 +25,8 @@ The user is able to perform all CRUD operations on the tasks/skills/habits that 
 ## Stats
 In order to have a visual representation of the user's progress when acecessing stats the user will be present with a doughnut diagram (for tasks and skills) and a list of dates for skills, so that they can then evaluate which areas need improving in their productivity journey.
 
+<p align="right">[<a href="#top">back to top</a>]</p>
+
 # Live Demo
 The final version of this Express based full-stack app 
 is in the following link:
@@ -40,6 +42,8 @@ React | NodeJS | Axios | Express | JavaScript | Bootstrap | HTML | CSS | Netlify
 Chartjs | react-chartjs | react-simple-chatbot | MERN Stack
 
 
+<p align="right">[<a href="#top">back to top</a>]</p>
+
 # Contacts
 ## Gregory Marklew
 email: Greg_marklew@hotmail.com
@@ -50,6 +54,8 @@ linkedIn: https://www.linkedin.com/in/gregory-marklew/
 email: paulo.jorge.ngs@gmail.com
 <br>
 linkedIn: www.linkedin.com/in/paulo-j-santos
+
+<p align="right">[<a href="#top">back to top</a>]</p>
 
 <br>
 <br>
